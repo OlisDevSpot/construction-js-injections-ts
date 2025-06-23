@@ -1,4 +1,4 @@
-import { default as buildingCostcoScript } from "../../templates/building-costco-article.js";
+import { default as buildingCostcoScript } from "../../companies/all-in-1/building-costco-article.js";
 
 const scripts = {
   "building-costco-article": buildingCostcoScript,
