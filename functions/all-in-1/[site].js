@@ -2,7 +2,7 @@ export async function onRequest(context) {
   const site = context.params?.site;
 
   try {
-    const mod = await import(`../companies/all-in-1/${site}`);
+    const mod = await import(`../../companies/all-in-1/${site}`);
     const script = mod.default;
 
     return new Response(script, {
