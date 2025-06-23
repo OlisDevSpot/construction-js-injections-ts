@@ -6,7 +6,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev:build": "tsc",
-    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --target=es2019 --platform=browser"
+    "build": "esbuild src/*.js --bundle --outdir=dist --format=esm --target=es2020 --platform=browser --minify"
   },
   "keywords": [],
   "author": "",
