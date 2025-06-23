@@ -1,13 +1,14 @@
-export async function onRequest(context) {
-  const site = context.params?.site;
+import { default as buildingCostcoScript } from "../../templates/building-costco-article.js";
 
-  console.log({ site });
+const scripts = {
+  "building-costco-article": buildingCostcoScript,
+};
+
+export async function onRequest(context) {
+  const _script = context.params?.script;
 
   try {
-    console.log("trying to import", `../../companies/all-in-1/${site}.js`);
-    const mod = await import(`../../companies/all-in-1/${site}.js`);
-    console.log({ mod });
-    const script = mod.default;
+    const script = scripts[_script];
 
     console.log({ script });
 
