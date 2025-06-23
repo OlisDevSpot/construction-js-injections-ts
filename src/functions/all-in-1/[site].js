@@ -3,7 +3,7 @@ export const onRequestGet = async ({ params }) => {
 
   try {
     const mod = await import(`../companies/all-in-1/${site}`);
-    const script = mod.default();
+    const script = mod.default;
 
     return new Response(script, {
       headers: {

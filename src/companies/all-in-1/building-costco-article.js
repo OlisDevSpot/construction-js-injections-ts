@@ -1,5 +1,10 @@
-import { updateCostcoArticleBase } from "../../templates/building-costco-article";
-import { companyInfo } from "./company-info";
-import { serializeFunction } from "../../utils/serializeFunction";
+import { updateCostcoArticleBase } from "../../templates/building-costco-article.js";
+import { companyInfo } from "./company-info.js";
+import { serializeFunction } from "../../utils/serializeFunction.js";
 
-return serializeFunction(updateCostcoArticleBase, companyInfo);
+const updateCostcoArticle = serializeFunction(
+  updateCostcoArticleBase,
+  companyInfo
+);
+
+export default updateCostcoArticle;
