@@ -7,4 +7,5 @@ const updateCostcoArticle = serializeFunction(
   companyInfo
 );
 
+console.log(updateCostcoArticle);
 export default updateCostcoArticle;
