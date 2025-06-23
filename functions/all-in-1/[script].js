@@ -7,7 +7,8 @@ const scripts = {
 };
 
 export async function onRequest(context) {
-  const _script = context.params?.script;
+  const _scriptRaw = context.params?.script;
+  const _script = _scriptRaw.replace(".js", "");
 
   try {
     const script = scripts[_script];
