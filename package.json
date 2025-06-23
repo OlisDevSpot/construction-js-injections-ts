@@ -5,7 +5,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev:build": "tsc",
-    "build": "esbuild src/**/*.js --bundle --outdir=dist --format=esm --target=es2020 --platform=browser --minify"
+    "real:build": "esbuild src/**/*.js --bundle --outdir=dist --format=esm --target=es2020 --platform=browser --minify",
+    "build": "echo 'No build needed'"
   },
   "keywords": [],
   "author": "",
