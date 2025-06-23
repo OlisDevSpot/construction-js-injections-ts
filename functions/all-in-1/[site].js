@@ -18,6 +18,7 @@ export async function onRequest(context) {
       },
     });
   } catch (err) {
+    console.error(err);
     return new Response("// Script not found", { status: 404 });
   }
 }
