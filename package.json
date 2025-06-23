@@ -2,7 +2,6 @@
   "name": "testing-cloudflare-pages",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev:build": "tsc",
