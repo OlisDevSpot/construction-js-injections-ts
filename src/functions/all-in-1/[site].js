@@ -1,5 +1,5 @@
-export const onRequestGet = async ({ params }) => {
-  const site = params?.site;
+export async function onRequest(context) {
+  const site = context.params?.site;
 
   try {
     const mod = await import(`../companies/all-in-1/${site}`);
@@ -14,4 +14,4 @@ export const onRequestGet = async ({ params }) => {
   } catch (err) {
     return new Response("// Script not found", { status: 404 });
   }
-};
+}
