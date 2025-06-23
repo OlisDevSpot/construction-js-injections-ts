@@ -7,8 +7,8 @@ export function serializeFunction(fn, companyData) {
     .trim();
 
   fnString = fnString
-    .replace(/{{link}}/, companyData.link)
-    .replace(/{{companyName}}/, companyData.name);
+    .replaceAll(/{{link}}/, companyData.link)
+    .replaceAll(/{{companyName}}/, companyData.name);
 
   return fnString;
 }
