@@ -4,7 +4,7 @@ export async function onRequest(context) {
   console.log({ site });
 
   try {
-    console.log("trying to import");
+    console.log("trying to import", `../../companies/all-in-1/${site}.js`);
     const mod = await import(`../../companies/all-in-1/${site}.js`);
     console.log({ mod });
     const script = mod.default;
