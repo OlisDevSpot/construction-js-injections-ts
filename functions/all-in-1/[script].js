@@ -1,43 +1,39 @@
-import { default as buildingCostcoScript } from "../../companies/all-in-1/building-costco-article.js";
-import { default as bbbCleanupScript } from "../../companies/all-in-1/bbb-cleanup.js";
+import buildingCostcoScript from "../../companies/all-in-1/building-costco-article.js";
+import bbbCleanupScript from "../../companies/all-in-1/bbb-cleanup.js";
 
 const scripts = {
   "building-costco-article": buildingCostcoScript,
   "bbb-cleanup": bbbCleanupScript,
 };
 
+export const onRequestOptions = async () =>
+  new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "GET,OPTIONS",
+      "Access-Control-Max-Age": "86400",
+    },
+  });
+
 export async function onRequest(context) {
-  const corsHeaders = {
-    "Access-Control-Allow-Origin": "*", // Or specific domain
-    "Access-Control-Allow-Methods": "GET,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Max-Age": "86400",
-  };
-
-  // Preflight handler
-  if (context.request.method === "OPTIONS") {
-    return new Response(null, {
-      status: 204,
-      headers: corsHeaders,
+  const { params } = context;
+  const key = params.script.replace(".js", "");
+  const script = scripts[key];
+  if (!script) {
+    return new Response("// Script not found", {
+      status: 404,
+      headers: { "Access-Control-Allow-Origin": "*" },
     });
   }
-  const _scriptRaw = context.params?.script;
-  const _script = _scriptRaw.replace(".js", "");
 
-  try {
-    const script = scripts[_script];
-
-    console.log({ script });
-
-    return new Response(script, {
-      headers: {
-        "content-type": "application/javascript",
-        "cache-control": "public, max-age=10",
-        ...corsHeaders,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-    return new Response("// Script not found", { status: 404 });
-  }
+  const response = new Response(script, {
+    headers: {
+      "Content-Type": "application/javascript",
+      "Cache-Control": "public, max-age=10",
+    },
+  });
+  response.headers.set("Access-Control-Allow-Origin", "*");
+  return response;
 }
