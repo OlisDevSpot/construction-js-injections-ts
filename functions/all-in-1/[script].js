@@ -7,6 +7,20 @@ const scripts = {
 };
 
 export async function onRequest(context) {
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*", // Or specific domain
+    "Access-Control-Allow-Methods": "GET,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+  };
+
+  // Preflight handler
+  if (context.request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders,
+    });
+  }
   const _scriptRaw = context.params?.script;
   const _script = _scriptRaw.replace(".js", "");
 
@@ -19,6 +33,7 @@ export async function onRequest(context) {
       headers: {
         "content-type": "application/javascript",
         "cache-control": "public, max-age=10",
+        ...corsHeaders,
       },
     });
   } catch (err) {
