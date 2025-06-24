@@ -5,6 +5,7 @@ import { updateCSLBIssDate } from "./cslb-cleanup.js";
 import { updateKTLAFireDonationBase } from "./ktla-fire-donation.js";
 import { updateSB350Base } from "./sb350.js";
 import { updateYelpCleanupBase } from "./yelp-cleanup.js";
+import { updateAB7AssistanceProgramsBase } from "./abc7-assistance-programs.js";
 
 export { globalTemplates } from "./global/index.js";
 
@@ -16,4 +17,5 @@ export const templates = {
   "cslb-cleanup": updateCSLBIssDate,
   sb350: updateSB350Base,
   "yelp-cleanup": updateYelpCleanupBase,
+  "abc7-assistance-programs": updateAB7AssistanceProgramsBase,
 };
