@@ -5,7 +5,8 @@ import { updateCSLBIssDate } from "./cslb-cleanup.js";
 import { updateKTLAFireDonationBase } from "./ktla-fire-donation.js";
 import { updateSB350Base } from "./sb350.js";
 import { updateYelpCleanupBase } from "./yelp-cleanup.js";
-import { updateSCERateChangeBase } from "./sce-rate-change.js";
+
+export { globalTemplates } from "./global/index.js";
 
 export const templates = {
   "bbb-cleanup": updateBBBCleanupBase,
@@ -15,8 +16,4 @@ export const templates = {
   "cslb-cleanup": updateCSLBIssDate,
   sb350: updateSB350Base,
   "yelp-cleanup": updateYelpCleanupBase,
-};
-
-export const globalTemplates = {
-  "sce-rate-change": updateSCERateChangeBase,
 };
