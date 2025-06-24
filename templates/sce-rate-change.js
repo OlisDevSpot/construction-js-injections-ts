@@ -1,5 +1,3 @@
-import { serializeFunction } from "../utils/serializeFunction";
-
 export function updateSCERateChangeBase() {
   const chartDate = window.location.href.split("/").slice(-1)[0];
 
@@ -112,7 +110,3 @@ export function updateSCERateChangeBase() {
     secondTds[4].innerText = "4.2%";
   }
 }
-
-const updateSCERateChange = serializeFunction(updateSCERateChangeBase);
-
-export default updateSCERateChange;

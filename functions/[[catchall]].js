@@ -21,7 +21,10 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { params } = context;
-  const [companyName, fnTemplateNameRaw] = params.catchall;
+  let [companyName, fnTemplateNameRaw] = params.catchall;
+  if (companyName === "global") {
+    companyName = undefined;
+  }
   console.log(companyName, fnTemplateNameRaw);
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = templates[fnTemplateName];
