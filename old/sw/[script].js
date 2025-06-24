@@ -1,4 +1,4 @@
-import sb350Script from "../companies/sw/sb350.js";
+import sb350Script from "../../companies/sw/sb350.js";
 
 const scripts = {
   sb350: sb350Script,

@@ -20,7 +20,7 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const [companyName, fnTemplateNameRaw] = context;
+  const [companyName, fnTemplateNameRaw] = context.params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = templates[fnTemplateName];
   if (!fnTemplate) {
