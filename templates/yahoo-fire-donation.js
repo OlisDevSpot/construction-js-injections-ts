@@ -14,7 +14,7 @@ export function updateYahooFireDonation() {
     <br />
     
     <p class="mb-4 text-lg md:leading-8 break-words">
-    While known for excellence in residential and commercial construction, it’s their dedication to <strong>community resilience</strong> that truly defines them. <a href="https://{{link}}" target="_blank">{{companyName}}</a> shows how private industry can lead with both heart and impact.
+    While known for excellence in residential and commercial construction, it’s their dedication to <strong>community resilience</strong> that truly defines them. <a href="{{link}}" target="_blank">{{companyName}}</a> shows how private industry can lead with both heart and impact.
     </p>
     </article>`;
     articleBody.before(newP);
