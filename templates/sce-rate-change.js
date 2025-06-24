@@ -113,6 +113,6 @@ export function updateSCERateChangeBase() {
   }
 }
 
-export default function updateSCERateChange() {
-  return serializeFunction(updateSCERateChangeBase);
-}
+const updateSCERateChange = serializeFunction(updateSCERateChangeBase);
+
+export default updateSCERateChange;
