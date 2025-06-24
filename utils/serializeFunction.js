@@ -1,4 +1,4 @@
-export function serializeFunction(fn, companyData) {
+export function serializeFunction(fn, companyData = {}) {
   let fnString = fn.toString();
 
   // Extract the function body only
@@ -13,9 +13,11 @@ export function serializeFunction(fn, companyData) {
     .join("\n");
 
   // Replace template placeholders
-  fnString = fnString
-    .replaceAll(/{{link}}/g, companyData.link)
-    .replaceAll(/{{companyName}}/g, companyData.name);
+  if (companyData) {
+    fnString = fnString
+      .replaceAll(/{{link}}/g, companyData.link)
+      .replaceAll(/{{companyName}}/g, companyData.name);
+  }
 
   // Normalize smart quotes (if needed)
   fnString = fnString.replace(/\u2019/g, "'").replace(/\u2018/g, "'");
