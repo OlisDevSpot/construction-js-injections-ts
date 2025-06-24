@@ -1,9 +1,7 @@
-import { default as buildingCostcoScript } from "../../companies/palmetto/building-costco-article.js";
-import { default as bbbCleanupScript } from "../../companies/palmetto/bbb-cleanup.js";
+import { default as sb350Script } from "../../companies/david-star/sb350.js";
 
 const scripts = {
-  "building-costco-article": buildingCostcoScript,
-  "bbb-cleanup": bbbCleanupScript,
+  "sb350": sb350Script,
 };
 
 export async function onRequestOptions() {
