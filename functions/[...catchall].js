@@ -22,6 +22,7 @@ export async function onRequestOptions() {
 export async function onRequest(context) {
   const { params } = context;
   console.log(params);
+  console.log(params.catchall);
   // const [companyName, fnTemplateNameRaw] = params.catchall;
   // console.log(companyName, fnTemplateNameRaw);
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
