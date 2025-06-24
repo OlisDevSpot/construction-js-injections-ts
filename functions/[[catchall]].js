@@ -1,11 +1,11 @@
-import { serializeFunction } from "../utils/serializeFunction";
-import { companies } from "../companies";
-import { templates } from "../templates";
+// import { serializeFunction } from "../utils/serializeFunction";
+// import { companies } from "../companies";
+// import { templates } from "../templates";
 
-function renderScript(fn, companyName) {
-  const companyInfo = companies[companyName];
-  return serializeFunction(fn, companyInfo);
-}
+// function renderScript(fn, companyName) {
+//   const companyInfo = companies[companyName];
+//   return serializeFunction(fn, companyInfo);
+// }
 
 export async function onRequestOptions() {
   return new Response(null, {
