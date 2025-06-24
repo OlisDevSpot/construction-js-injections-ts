@@ -21,23 +21,25 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const [companyName, fnTemplateNameRaw] = context.params.catchall;
-  const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const fnTemplate = templates[fnTemplateName];
-  if (!fnTemplate) {
-    return new Response("// Script not found", {
-      status: 404,
-      headers: { "Access-Control-Allow-Origin": "*" },
-    });
-  }
+  console.log(companyName, fnTemplateNameRaw);
+  // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
+  // const fnTemplate = templates[fnTemplateName];
+  // if (!fnTemplate) {
+  //   return new Response("// Script not found", {
+  //     status: 404,
+  //     headers: { "Access-Control-Allow-Origin": "*" },
+  //   });
+  // }
 
-  const script = renderScript(fnTemplate, companyName);
+  // const script = renderScript(fnTemplate, companyName);
 
-  const response = new Response(script, {
-    headers: {
-      "Content-Type": "application/javascript",
-      "Cache-Control": "public, max-age=10",
-    },
-  });
-  response.headers.set("Access-Control-Allow-Origin", "*");
-  return response;
+  // const response = new Response(script, {
+  //   headers: {
+  //     "Content-Type": "application/javascript",
+  //     "Cache-Control": "public, max-age=10",
+  //   },
+  // });
+  // response.headers.set("Access-Control-Allow-Origin", "*");
+  // return response;
+  return new Response("Hello!", { status: 200 });
 }
