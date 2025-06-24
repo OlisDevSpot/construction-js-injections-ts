@@ -1,11 +1,5 @@
 import { serializeFunction } from "../utils/serializeFunction";
-import { companies } from "../companies";
-import { templates } from "../templates";
-
-function renderScript(fn, companyName) {
-  const companyInfo = companies[companyName];
-  return serializeFunction(fn, companyInfo);
-}
+import { globalTemplates } from "../templates";
 
 export async function onRequestOptions() {
   return new Response(null, {
@@ -21,9 +15,10 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { params } = context;
-  let [companyName, fnTemplateNameRaw] = params.catchall;
-  const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const fnTemplate = templates[fnTemplateName];
+  const templateName = params.template;
+  const fnTemplateName = templateName.replace(".js", "");
+  const fnTemplate = globalTemplates[fnTemplateName];
+
   if (!fnTemplate) {
     return new Response("// Script not found", {
       status: 404,
@@ -31,7 +26,7 @@ export async function onRequest(context) {
     });
   }
 
-  const script = renderScript(fnTemplate, companyName);
+  const script = serializeFunction(fnTemplate);
 
   const response = new Response(script, {
     headers: {

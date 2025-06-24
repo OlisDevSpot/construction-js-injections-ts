@@ -15,5 +15,8 @@ export const templates = {
   "cslb-cleanup": updateCSLBIssDate,
   sb350: updateSB350Base,
   "yelp-cleanup": updateYelpCleanupBase,
+};
+
+export const globalTemplates = {
   "sce-rate-change": updateSCERateChangeBase,
 };
