@@ -6,8 +6,8 @@ const scripts = {
   "bbb-cleanup": bbbCleanupScript,
 };
 
-export const onRequestOptions = async () =>
-  new Response(null, {
+export async function onRequestOptions() {
+  return new Response(null, {
     status: 204,
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -16,6 +16,7 @@ export const onRequestOptions = async () =>
       "Access-Control-Max-Age": "86400",
     },
   });
+}
 
 export async function onRequest(context) {
   const { params } = context;
