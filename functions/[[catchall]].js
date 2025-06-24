@@ -1,4 +1,4 @@
-import { serializeFunction } from "../utils/serializeFunction";
+import { serializeFunction } from "../utils/serializeFunction.js";
 import { companies } from "../companies";
 import { templates } from "../templates";
 

@@ -1,5 +1,5 @@
-import { serializeFunction } from "../utils/serializeFunction";
-import { globalTemplates } from "../templates";
+import { serializeFunction } from "../../utils/serializeFunction.js";
+import { globalTemplates } from "../../templates";
 
 export async function onRequestOptions() {
   return new Response(null, {
