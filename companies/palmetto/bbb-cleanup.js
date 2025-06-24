@@ -1,4 +1,5 @@
-import { bbbCleanupBase } from "../../templates/bbb.js";
+import { bbbCleanupBase } from "../../templates/bbb-cleanup.js";
+
 import { companyInfo } from "./company-info.js";
 import { serializeFunction } from "../../utils/serializeFunction.js";
 

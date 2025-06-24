@@ -1,10 +1,11 @@
-import buildingCostcoScript from "../../companies/all-in-1/building-costco-article.js";
-import bbbCleanupScript from "../../companies/all-in-1/bbb-cleanup.js";
+import { serializeFunction } from "../utils/serializeFunction";
+import { companies } from "../companies";
+import { templates } from "../templates";
 
-const scripts = {
-  "building-costco-article": buildingCostcoScript,
-  "bbb-cleanup": bbbCleanupScript,
-};
+function renderScript(fn, companyName) {
+  const companyInfo = companies[companyName];
+  return serializeFunction(fn, companyInfo);
+}
 
 export async function onRequestOptions() {
   return new Response(null, {
@@ -19,15 +20,17 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const { params } = context;
-  const key = params.script.replace(".js", "");
-  const script = scripts[key];
-  if (!script) {
+  const [companyName, fnTemplateNameRaw] = context;
+  const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
+  const fnTemplate = templates[fnTemplateName];
+  if (!fnTemplate) {
     return new Response("// Script not found", {
       status: 404,
       headers: { "Access-Control-Allow-Origin": "*" },
     });
   }
+
+  const script = renderScript(fnTemplate, companyName);
 
   const response = new Response(script, {
     headers: {

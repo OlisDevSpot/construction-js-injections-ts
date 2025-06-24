@@ -1,4 +1,4 @@
-export function bbbCleanupBase() {
+export function updateBBBCleanupBase() {
   const reviewsPerPage = 10;
   const newReviews = [
     "I wasn’t sure what to expect from {{companyName}}, but I’m glad I gave them a chance. They didn’t do any upgrades to my home, but the bill reduction alone has made a noticeable difference. It’s nice not to dread opening the utility bill every month",

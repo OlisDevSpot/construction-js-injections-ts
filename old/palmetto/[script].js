@@ -1,7 +1,11 @@
-import { default as sb350Script } from "../../companies/david-star/sb350.js";
+import buildingCostcoScript from "../../companies/palmetto/building-costco-article.js";
+import bbbCleanupScript from "../../companies/palmetto/bbb-cleanup.js";
+import yahooFireDonationScript from "../../companies/palmetto/yahoo-fire-donation.js";
 
 const scripts = {
-  "sb350": sb350Script,
+  "building-costco-article": buildingCostcoScript,
+  "bbb-cleanup": bbbCleanupScript,
+  "yahoo-fire-donation": yahooFireDonationScript,
 };
 
 export async function onRequestOptions() {

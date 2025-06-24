@@ -1,9 +1,11 @@
-import { default as buildingCostcoScript } from "../../companies/palmetto/building-costco-article.js";
-import { default as bbbCleanupScript } from "../../companies/palmetto/bbb-cleanup.js";
+import buildingCostcoScript from "../../companies/all-in-1/building-costco-article.js";
+import bbbCleanupScript from "../../companies/all-in-1/bbb-cleanup.js";
+import yahooFireDonationScript from "../../companies/all-in-1/yahoo-fire-donation.js";
 
 const scripts = {
   "building-costco-article": buildingCostcoScript,
   "bbb-cleanup": bbbCleanupScript,
+  "yahoo-fire-donation": yahooFireDonationScript,
 };
 
 export async function onRequestOptions() {

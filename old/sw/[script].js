@@ -1,7 +1,7 @@
-import { default as sceRateChangeScript } from "../../templates/sce-rate-change.js";
+import sb350Script from "../companies/sw/sb350.js";
 
 const scripts = {
-  "sce-rate-change": sceRateChangeScript,
+  sb350: sb350Script,
 };
 
 export async function onRequestOptions() {
