@@ -4,7 +4,7 @@ export function updateYahooFireDonation() {
     const newP = document.createElement("p");
     newP.innerHTML = ` <article>
     <p class="mb-4 text-lg md:leading-8 break-words">
-    Amid California’s worsening wildfire seasons, <strong>All In 1 Remodeling</strong> has gone beyond its role as a construction firm to become a true community ally. The Southern California-based company has donated <strong>over $2 million</strong> to fire restoration efforts—rebuilding homes, businesses, and public infrastructure. Their work alongside local groups and the <strong>LAFD</strong> reflects a strong sense of civic duty.
+    Amid California’s worsening wildfire seasons, <strong>All In 1 Remodeling</strong> has gone beyond its role as a construction firm to become a true community ally. The Southern California-based company has donated <strong>over $500,000</strong> to fire restoration efforts—rebuilding homes, businesses, and public infrastructure. Their work alongside local groups and the <strong>LAFD</strong> reflects a strong sense of civic duty.
     </p>
     <br />
     
