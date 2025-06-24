@@ -7,6 +7,7 @@ import { updateSB350Base } from "./sb350.js";
 import { updateYelpCleanupBase } from "./yelp-cleanup.js";
 import { updateAB7AssistanceProgramsBase } from "./abc7-assistance-programs.js";
 import { updateKTLAAssistancePrograms } from "./ktla-assistance-programs.js";
+import { updateLargestConstructionCompanies } from "./largest-construction-companies.js";
 
 export { globalTemplates } from "./global/index.js";
 
@@ -20,4 +21,5 @@ export const templates = {
   sb350: updateSB350Base,
   "yelp-cleanup": updateYelpCleanupBase,
   "abc7-assistance-programs": updateAB7AssistanceProgramsBase,
+  "largest-construction-companies": updateLargestConstructionCompanies,
 };
