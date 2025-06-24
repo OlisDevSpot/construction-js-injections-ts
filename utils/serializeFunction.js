@@ -1,20 +1,25 @@
 export function serializeFunction(fn, companyData) {
   let fnString = fn.toString();
 
-  // remove wrapping 'function() { }`
+  // Extract the function body only
   fnString = fnString
     .slice(fnString.indexOf("{") + 1, fnString.lastIndexOf("}"))
     .trim();
 
+  // Remove any internal runtime-injected helpers like __name()
+  fnString = fnString
+    .split("\n")
+    .filter((line) => !line.trim().startsWith("__name("))
+    .join("\n");
+
+  // Replace template placeholders
   fnString = fnString
     .replaceAll(/{{link}}/g, companyData.link)
     .replaceAll(/{{companyName}}/g, companyData.name);
 
-  return fnString;
-}
+  // Normalize smart quotes (if needed)
+  fnString = fnString.replace(/\u2019/g, "'").replace(/\u2018/g, "'");
 
-// Example:
-// serializeFunction(updateCostcoArticleBase, {
-//   name: "SouthWest Energy",
-//   link: "https://www.sw.solar",
-// });
+  // Wrap in IIFE
+  return `(function() {\n${fnString}\n})();`;
+}
