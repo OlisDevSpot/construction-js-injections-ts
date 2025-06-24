@@ -20,7 +20,9 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const [companyName, fnTemplateNameRaw] = context.params.catchall;
+  const { params } = context;
+  console.log(params);
+  const [companyName, fnTemplateNameRaw] = params.catchall;
   console.log(companyName, fnTemplateNameRaw);
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   // const fnTemplate = templates[fnTemplateName];
