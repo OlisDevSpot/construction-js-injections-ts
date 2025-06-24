@@ -1,4 +1,4 @@
 export const davidStar = {
-  name: "David Star",
+  name: "David Star Construction",
   link: "https://dstarconstructions.com",
 };

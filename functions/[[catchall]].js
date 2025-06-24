@@ -24,6 +24,7 @@ export async function onRequest(context) {
   let [companyName, fnTemplateNameRaw] = params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = templates[fnTemplateName];
+
   if (!fnTemplate) {
     return new Response("// Script not found", {
       status: 404,
@@ -39,6 +40,7 @@ export async function onRequest(context) {
       "Cache-Control": "public, max-age=10",
     },
   });
+
   response.headers.set("Access-Control-Allow-Origin", "*");
   return response;
 }
