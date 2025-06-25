@@ -1,6 +1,7 @@
 import { serializeFunction } from "../utils/serializeFunction.js";
 import { companies } from "../companies";
-import { templates } from "../templates";
+import { templates, routeMatchers } from "../templates";
+import { urlMatchesPattern } from "../utils/routeMatcher.js";
 
 function renderScript(fn, companyName) {
   const companyInfo = companies[companyName];
@@ -21,9 +22,16 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { params } = context;
-  console.log(params);
   const url = new URL(context.request.url).searchParams.get("url");
-  console.log(url);
+  const isMatched = urlMatchesPattern(url, routeMatchers);
+
+  if (!isMatched) {
+    return new Response("// Site doesn't match any scripts", {
+      status: 404,
+      headers: { "Access-Control-Allow-Origin": "*" },
+    });
+  }
+
   let [companyName, fnTemplateNameRaw] = params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = templates[fnTemplateName].templateFn;
