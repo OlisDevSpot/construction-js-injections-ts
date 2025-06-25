@@ -39,7 +39,9 @@ export async function onRequest(context) {
 
   let [companyName, fnTemplateNameRaw] = params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const fnTemplate = templates[fnTemplateName].templateFn;
+  const fnTemplate = scriptTemplates.find(
+    (item) => item.key === fnTemplateName
+  ).templateFn;
 
   if (!fnTemplate) {
     return new Response("// Script not found", {
