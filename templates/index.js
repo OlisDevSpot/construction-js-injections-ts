@@ -30,3 +30,5 @@ export const templates = {
 };
 
 export const scriptTemplates = compileMatchers(templates);
+
+console.log(scriptTemplates);

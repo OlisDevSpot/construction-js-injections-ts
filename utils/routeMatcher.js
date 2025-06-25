@@ -9,9 +9,9 @@ function createRegexFromPattern(pattern) {
 export function compileMatchers(scriptsObj) {
   const compiled = [];
 
-  for (const [key, { matcher, fn }] of Object.entries(scriptsObj)) {
+  for (const [key, { matcher, templateFn }] of Object.entries(scriptsObj)) {
     const regex = createRegexFromPattern(matcher);
-    compiled.push({ key, matcher, regex, fn });
+    compiled.push({ key, matcher, regex, templateFn });
   }
 
   return compiled;
