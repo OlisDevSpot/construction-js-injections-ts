@@ -21,6 +21,8 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { params } = context;
+  const url = context.request.searchParams.get("url");
+  console.log(url);
   let [companyName, fnTemplateNameRaw] = params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = templates[fnTemplateName].templateFn;

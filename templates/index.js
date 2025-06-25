@@ -11,7 +11,6 @@ import { ktlaFireDonation } from "./ktla-fire-donation.js";
 import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
 import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
-// global templates export from this file
 import { globalTemplates as globalTempaltesRaw } from "./global/index.js";
 
 export const templates = {
@@ -33,5 +32,3 @@ export const routeMatchers = Object.values({
   ...templates,
   ...globalTemplates,
 }).map((template) => template.matcher);
-
-console.log(routeMatchers);
