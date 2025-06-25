@@ -1,6 +1,6 @@
 import { serializeFunction } from "../utils/serializeFunction.js";
-import { companies } from "../companies";
-import { scriptTemplates } from "../templates";
+import { companies } from "../companies/index.js";
+import { scriptTemplates } from "../templates/index.js";
 import { findMatchingFn } from "../utils/routeMatcher.js";
 
 function renderScript(fn, companyName) {
@@ -21,10 +21,8 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const { params } = context;
-  console.log({ params });
+  const { companyName } = context.params;
   const url = new URL(context.request.url).searchParams.get("url");
-  console.log({ url });
 
   const matchingScriptTemplate = findMatchingFn(url, scriptTemplates);
 
@@ -37,10 +35,9 @@ export async function onRequest(context) {
     });
   }
 
-  let [companyName, fnTemplateName] = params.catchall;
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = scriptTemplates.find(
-    (item) => item.key === fnTemplateName
+    (item) => item.url === url
   ).templateFn;
 
   if (!fnTemplate) {
