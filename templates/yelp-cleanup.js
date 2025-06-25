@@ -1,4 +1,14 @@
 function templateFn() {
+  const url = new URL(window.location.href);
+  const companyURLString = url.pathname
+    .split("/")[2]
+    .replace("-", " ")
+    .toLowerCase();
+  const shouldRun = companyURLString.includes(
+    "{{companyKey}}".replace("-", " ")
+  );
+  if (!shouldRun) return;
+
   const redColor = "rgba(251,67,60,1)";
   const humanReviews = [
     "We got three quotes, and {{companyName}} stood out immediately. They weren’t the cheapest, but they explained every step and didn’t cut corners. Worth every penny. Great communication throughout.",

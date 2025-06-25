@@ -15,6 +15,7 @@ export function serializeFunction(fn, companyData = {}) {
   // Replace template placeholders
   if (companyData) {
     fnString = fnString
+      .replaceAll(/{{companyKey}}/g, companyData.key)
       .replaceAll(/{{link}}/g, companyData.link)
       .replaceAll(/{{companyName}}/g, companyData.name)
       .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
