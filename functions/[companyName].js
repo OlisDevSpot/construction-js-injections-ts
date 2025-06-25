@@ -22,7 +22,9 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { companyName } = context.params;
-  const url = new URL(context.request.url).searchParams.get("url");
+  const url = decodeURIComponent(
+    new URL(context.request.url).searchParams.get("url")
+  );
 
   const matchingScriptTemplate = findMatchingFn(url, scriptTemplates);
 
