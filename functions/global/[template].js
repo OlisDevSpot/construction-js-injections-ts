@@ -1,5 +1,5 @@
 import { serializeFunction } from "../../utils/serializeFunction.js";
-import { globalTemplates } from "../../templates";
+import { templates } from "../../templates";
 
 export async function onRequestOptions() {
   return new Response(null, {
@@ -17,7 +17,7 @@ export async function onRequest(context) {
   const { params } = context;
   const templateName = params.template;
   const fnTemplateName = templateName.replace(".js", "");
-  const fnTemplate = globalTemplates[fnTemplateName].templateFn;
+  const fnTemplate = templates[fnTemplateName].templateFn;
 
   if (!fnTemplate) {
     return new Response("// Script not found", {
