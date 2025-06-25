@@ -11,7 +11,9 @@ import { ktlaFireDonation } from "./ktla-fire-donation.js";
 import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
 import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
-import { globalTemplates as globalTempaltesRaw } from "./global/index.js";
+import { globalTemplates } from "./global/index.js";
+
+import { compileMatchers } from "../utils/routeMatcher.js";
 
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
@@ -24,11 +26,7 @@ export const templates = {
   sb350: sb350InsertCompany,
   "yelp-cleanup": yelpCleanup,
   "yahoo-fire-donation": yahooFireDonation,
+  ...globalTemplates,
 };
 
-export const globalTemplates = globalTempaltesRaw;
-
-export const routeMatchers = Object.values({
-  ...templates,
-  ...globalTemplates,
-}).map((template) => template.matcher);
+export const scriptTemplates = compileMatchers(templates);

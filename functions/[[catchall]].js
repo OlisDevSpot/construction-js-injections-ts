@@ -1,7 +1,7 @@
 import { serializeFunction } from "../utils/serializeFunction.js";
 import { companies } from "../companies";
-import { templates, routeMatchers } from "../templates";
-import { urlMatchesPattern } from "../utils/routeMatcher.js";
+import { scriptTemplates } from "../templates";
+import { findMatchingFn } from "../utils/routeMatcher.js";
 
 function renderScript(fn, companyName) {
   const companyInfo = companies[companyName];
@@ -22,8 +22,13 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { params } = context;
+  console.log({ params });
   const url = new URL(context.request.url).searchParams.get("url");
-  const isMatched = urlMatchesPattern(url, routeMatchers);
+  console.log({ url });
+
+  const matchingScriptTemplate = findMatchingFn(url, scriptTemplates);
+
+  const isMatched = !!matchingScriptTemplate;
 
   if (!isMatched) {
     return new Response("// Site doesn't match any scripts", {
