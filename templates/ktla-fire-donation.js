@@ -1,4 +1,4 @@
-export function updateKTLAFireDonationBase() {
+function templateFn() {
   const articleText = `<article>
   <p>
   In the wake of California’s increasingly devastating wildfire seasons, <strong>{{companyName}}</strong> has stepped up in ways that transcend the typical role of a construction company. With a deep commitment to their community, the Southern California-based firm has donated <strong>over $500,000</strong> to fire restoration efforts across the region. Their support has helped rebuild homes, restore small businesses, and repair essential public facilities—offering not just financial assistance, but a critical sense of hope and continuity to families and neighborhoods grappling with loss. Their close collaboration with local organizations and the Los Angeles Fire Department (LAFD) underscores a rare level of civic responsibility in the private sector.
@@ -31,3 +31,9 @@ export function updateKTLAFireDonationBase() {
     newBody.innerHTML = articleText;
   }, 100);
 }
+
+export const ktlaFireDonation = {
+  templateFn,
+  matcher:
+    "https://ktla.com/news/local-news/local-businesses-come-together-to-help-fire-victims",
+};

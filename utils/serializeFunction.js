@@ -16,7 +16,8 @@ export function serializeFunction(fn, companyData = {}) {
   if (companyData) {
     fnString = fnString
       .replaceAll(/{{link}}/g, companyData.link)
-      .replaceAll(/{{companyName}}/g, companyData.name);
+      .replaceAll(/{{companyName}}/g, companyData.name)
+      .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
   }
 
   // Normalize smart quotes (if needed)

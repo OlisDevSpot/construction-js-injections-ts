@@ -1,4 +1,4 @@
-export function updateYahooFireDonation() {
+function templateFn() {
   setTimeout(() => {
     const articleBody = document.querySelector("[data-article-body] p");
     const newP = document.createElement("p");
@@ -21,3 +21,9 @@ export function updateYahooFireDonation() {
     articleBody.remove();
   }, 300);
 }
+
+export const yahooFireDonation = {
+  templateFn,
+  matcher:
+    "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html",
+};

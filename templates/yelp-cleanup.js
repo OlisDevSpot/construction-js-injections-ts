@@ -1,4 +1,4 @@
-export function updateYelpCleanupBase() {
+function templateFn() {
   const redColor = "rgba(251,67,60,1)";
   const humanReviews = [
     "We got three quotes, and {{companyName}} stood out immediately. They weren’t the cheapest, but they explained every step and didn’t cut corners. Worth every penny. Great communication throughout.",
@@ -139,3 +139,8 @@ export function updateYelpCleanupBase() {
     return photos.length > 0;
   }
 }
+
+export const yelpCleanup = {
+  templateFn,
+  matcher: "https://www.yelp.com/biz/*",
+};

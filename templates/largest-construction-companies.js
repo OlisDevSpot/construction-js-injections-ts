@@ -1,4 +1,4 @@
-export function updateLargestConstructionCompanies() {
+function templateFn() {
   setTimeout(() => {
     const heading = document.querySelectorAll("h3.wp-block-heading")[5];
     heading.innerText = "6. {{companyName}}";
@@ -27,3 +27,9 @@ export function updateLargestConstructionCompanies() {
     articleDate.innerText = "January 30th, 2025";
   }
 }
+
+export const largestConstructionCompanies = {
+  templateFn,
+  matcher:
+    "https://www.certisaec.com/largest-construction-companies-in-the-golden-state",
+};

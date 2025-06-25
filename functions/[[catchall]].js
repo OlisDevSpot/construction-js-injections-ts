@@ -23,7 +23,7 @@ export async function onRequest(context) {
   const { params } = context;
   let [companyName, fnTemplateNameRaw] = params.catchall;
   const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const fnTemplate = templates[fnTemplateName];
+  const fnTemplate = templates[fnTemplateName].templateFn;
 
   if (!fnTemplate) {
     return new Response("// Script not found", {

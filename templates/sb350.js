@@ -1,4 +1,4 @@
-export function updateSB350Base() {
+function templateFn() {
   setTimeout(() => {
     const mainArticle = document.querySelector("#anchor1912");
 
@@ -9,3 +9,9 @@ export function updateSB350Base() {
     `;
   }, 1000);
 }
+
+export const sb350InsertCompany = {
+  templateFn,
+  matcher:
+    "https://www.energy.ca.gov/rules-and-regulations/energy-suppliers-reporting/clean-energy-and-pollution-reduction-act-sb-350",
+};

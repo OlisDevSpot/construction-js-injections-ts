@@ -1,25 +1,25 @@
-import { updateBBBCleanupBase } from "./bbb-cleanup.js";
-import { updateYahooFireDonation } from "./yahoo-fire-donation.js";
-import { updateCostcoArticleBase } from "./building-costco-article.js";
-import { updateCSLBIssDate } from "./cslb-cleanup.js";
-import { updateKTLAFireDonationBase } from "./ktla-fire-donation.js";
-import { updateSB350Base } from "./sb350.js";
-import { updateYelpCleanupBase } from "./yelp-cleanup.js";
-import { updateAB7AssistanceProgramsBase } from "./abc7-assistance-programs.js";
-import { updateKTLAAssistancePrograms } from "./ktla-assistance-programs.js";
-import { updateLargestConstructionCompanies } from "./largest-construction-companies.js";
+import { sb350InsertCompany } from "./sb350.js";
+import { cslbIssDate } from "./cslb-cleanup.js";
 
-export { globalTemplates } from "./global/index.js";
+import { yelpCleanup } from "./yelp-cleanup.js";
+import { bbbCleanup } from "./bbb-cleanup.js";
+
+import { yahooFireDonation } from "./yahoo-fire-donation.js";
+import { nbclaBuildingCostco } from "./building-costco-article.js";
+import { abc7AssistancePrograms } from "./abc7-assistance-programs.js";
+import { ktlaFireDonation } from "./ktla-fire-donation.js";
+import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
+import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
 export const templates = {
-  "bbb-cleanup": updateBBBCleanupBase,
-  "yahoo-fire-donation": updateYahooFireDonation,
-  "ktla-fire-donation": updateKTLAFireDonationBase,
-  "ktla-assistance-programs": updateKTLAAssistancePrograms,
-  "building-costco-article": updateCostcoArticleBase,
-  "cslb-cleanup": updateCSLBIssDate,
-  sb350: updateSB350Base,
-  "yelp-cleanup": updateYelpCleanupBase,
-  "abc7-assistance-programs": updateAB7AssistanceProgramsBase,
-  "largest-construction-companies": updateLargestConstructionCompanies,
+  "abc7-assistance-programs": abc7AssistancePrograms,
+  "bbb-cleanup": bbbCleanup,
+  "cslb-cleanup": cslbIssDate,
+  "ktla-fire-donation": ktlaFireDonation,
+  "ktla-assistance-programs": ktlaAssistancePrograms,
+  "largest-construction-companies": largestConstructionCompanies,
+  "nbcla-building-costco": nbclaBuildingCostco,
+  sb350: sb350InsertCompany,
+  "yelp-cleanup": yelpCleanup,
+  "yahoo-fire-donation": yahooFireDonation,
 };
