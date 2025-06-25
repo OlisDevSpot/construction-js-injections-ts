@@ -36,7 +36,9 @@ export async function onRequest(context) {
   }
 
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const scriptTemplate = scriptTemplates.find((item) => item.url === url);
+  const scriptTemplate = scriptTemplates.find(
+    (item) => item.matcher === matchingScriptTemplate.matcher
+  );
 
   console.log({
     url,
