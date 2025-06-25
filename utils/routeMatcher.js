@@ -24,7 +24,7 @@ export function findMatchingFn(url, compiledMatchers) {
       return {
         key: item.key,
         matcher: item.matcher,
-        fn: item.fn,
+        templateFn: item.templateFn,
       };
     }
   }

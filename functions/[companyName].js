@@ -38,6 +38,13 @@ export async function onRequest(context) {
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const scriptTemplate = scriptTemplates.find((item) => item.url === url);
 
+  console.log({
+    url,
+    matchingScriptTemplate,
+    scriptTemplate,
+    companyName,
+  });
+
   if (!scriptTemplate) {
     return new Response("// Script not found", {
       status: 404,
