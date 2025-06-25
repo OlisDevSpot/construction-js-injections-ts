@@ -36,16 +36,16 @@ export async function onRequest(context) {
   }
 
   // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
-  const fnTemplate = scriptTemplates.find(
-    (item) => item.url === url
-  ).templateFn;
+  const scriptTemplate = scriptTemplates.find((item) => item.url === url);
 
-  if (!fnTemplate) {
+  if (!scriptTemplate) {
     return new Response("// Script not found", {
       status: 404,
       headers: { "Access-Control-Allow-Origin": "*" },
     });
   }
+
+  const fnTemplate = scriptTemplate.templateFn;
 
   const script = renderScript(fnTemplate, companyName);
 
