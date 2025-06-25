@@ -93,5 +93,5 @@ function templateFn() {
 
 export const scePaymentHistory = {
   templateFn,
-  matcher: "https://www.yelp.com/biz/*",
+  matcher: "https://www.sce.com/mysce/billsnpayments*",
 };

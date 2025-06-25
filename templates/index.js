@@ -12,7 +12,7 @@ import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
 import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
 // global templates export from this file
-export { globalTemplates } from "./global/index.js";
+import { globalTemplates as globalTempaltesRaw } from "./global/index.js";
 
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
@@ -26,3 +26,12 @@ export const templates = {
   "yelp-cleanup": yelpCleanup,
   "yahoo-fire-donation": yahooFireDonation,
 };
+
+export const globalTemplates = globalTempaltesRaw;
+
+export const routeMatchers = Object.values({
+  ...templates,
+  ...globalTemplates,
+}).map((template) => template.matcher);
+
+console.log(routeMatchers);
