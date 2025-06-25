@@ -11,6 +11,8 @@ import { ktlaFireDonation } from "./ktla-fire-donation.js";
 import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
 import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
+export { globalTemplates } from "./global/index.js";
+
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
   "bbb-cleanup": bbbCleanup,
