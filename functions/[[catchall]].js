@@ -37,8 +37,8 @@ export async function onRequest(context) {
     });
   }
 
-  let [companyName, fnTemplateNameRaw] = params.catchall;
-  const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
+  let [companyName, fnTemplateName] = params.catchall;
+  // const fnTemplateName = fnTemplateNameRaw.replace(".js", "");
   const fnTemplate = scriptTemplates.find(
     (item) => item.key === fnTemplateName
   ).templateFn;
