@@ -1,4 +1,4 @@
-export function updateSCERateChangeBase() {
+function templateFn() {
   const chartDate = window.location.href.split("/").slice(-1)[0];
 
   switch (chartDate) {
@@ -110,3 +110,8 @@ export function updateSCERateChangeBase() {
     secondTds[4].innerText = "4.2%";
   }
 }
+
+export const sceRateChange = {
+  templateFn,
+  matcher: "https://www.sce.com/save-money/*",
+};

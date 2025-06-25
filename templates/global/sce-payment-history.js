@@ -1,4 +1,4 @@
-export function updateSCEPaymentHistory() {
+function templateFn() {
   setTimeout(() => {
     createButton();
   }, 3000);
@@ -90,3 +90,8 @@ export function updateSCEPaymentHistory() {
     })}`;
   }
 }
+
+export const scePaymentHistory = {
+  templateFn,
+  matcher: "https://www.yelp.com/biz/*",
+};

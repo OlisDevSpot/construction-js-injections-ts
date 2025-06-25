@@ -11,6 +11,7 @@ import { ktlaFireDonation } from "./ktla-fire-donation.js";
 import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";
 import { largestConstructionCompanies } from "./largest-construction-companies.js";
 
+// global templates export from this file
 export { globalTemplates } from "./global/index.js";
 
 export const templates = {

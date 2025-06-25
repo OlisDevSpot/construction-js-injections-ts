@@ -17,7 +17,7 @@ export async function onRequest(context) {
   const { params } = context;
   const templateName = params.template;
   const fnTemplateName = templateName.replace(".js", "");
-  const fnTemplate = globalTemplates[fnTemplateName];
+  const fnTemplate = globalTemplates[fnTemplateName].templateFn;
 
   if (!fnTemplate) {
     return new Response("// Script not found", {
