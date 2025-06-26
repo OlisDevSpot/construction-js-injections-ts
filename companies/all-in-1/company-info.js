@@ -1,4 +1,4 @@
-import { generateCompany } from "../../utils/company";
+import { generateCompany } from "../../utils/generateCompany.js";
 
 const allIn1Metadata = {
   key: "all-in-1",

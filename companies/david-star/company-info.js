@@ -1,4 +1,4 @@
-import { generateCompany } from "../../utils/company";
+import { generateCompany } from "../../utils/generateCompany.js";
 
 const davidStarMetadata = {
   key: "david-star",
