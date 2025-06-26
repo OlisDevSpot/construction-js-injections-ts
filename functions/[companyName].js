@@ -68,9 +68,7 @@ export async function onRequest(context) {
     });
   }
 
-  const fnTemplate = scriptTemplate.templateFn;
-
-  const script = renderScript(fnTemplate, companyName);
+  const script = renderScript(scriptTemplate, companyName);
 
   const response = new Response(script, {
     headers: {

@@ -1,6 +1,7 @@
 import { getCompany } from "../utils/company.js";
 
-function serializeFunction(fn, companyData = {}) {
+function serializeFunction(scriptTemplate, companyData = {}) {
+  const fn = scriptTemplate.templateFn;
   let fnString = fn.toString();
 
   // Extract the function body only
@@ -16,6 +17,14 @@ function serializeFunction(fn, companyData = {}) {
 
   // Replace template placeholders
   if (companyData) {
+    if (scriptTemplate.companySpecific) {
+      const index = scriptTemplate.reviewSeed - 1;
+      fnString = fnString.replaceAll(
+        /{{reviews}}/g,
+        JSON.stringify(companyData.relevantReviews[index])
+      );
+    }
+
     fnString = fnString
       .replaceAll(/{{companyKey}}/g, companyData.key)
       .replaceAll(/{{link}}/g, companyData.link)

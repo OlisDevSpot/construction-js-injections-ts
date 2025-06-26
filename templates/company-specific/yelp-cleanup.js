@@ -144,4 +144,5 @@ export const yelpCleanup = {
   templateFn,
   matcher: "https://www.yelp.com/biz/*",
   companySpecific: true,
+  reviewSeed: 2,
 };
