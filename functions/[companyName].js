@@ -21,10 +21,18 @@ export async function onRequest(context) {
     new URL(decodedUrl).searchParams.get("data")
   );
 
+  console.log({
+    companyName,
+    currentSiteUrl,
+    salesperson,
+  });
+
   const matchingScriptTemplate = findMatchingFn(
     currentSiteUrl,
     scriptTemplates
   );
+
+  console.log({ matchingScriptTemplate });
 
   if (!Boolean(matchingScriptTemplate)) {
     return new Response("// Site doesn't match any scripts", {
@@ -32,6 +40,11 @@ export async function onRequest(context) {
       headers: { "Access-Control-Allow-Origin": "*" },
     });
   }
+
+  console.log({
+    companySpecific: matchingScriptTemplate.companySpecific,
+    isCompanyMatching: isCompanyMatching(currentSiteUrl, companyName),
+  });
 
   if (
     matchingScriptTemplate.companySpecific &&
