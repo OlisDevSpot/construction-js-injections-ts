@@ -1,4 +1,6 @@
-export function serializeFunction(fn, companyData = {}) {
+import { getCompany } from "../utils/company.js";
+
+function serializeFunction(fn, companyData = {}) {
   let fnString = fn.toString();
 
   // Extract the function body only
@@ -26,4 +28,9 @@ export function serializeFunction(fn, companyData = {}) {
 
   // Wrap in IIFE
   return `(function() {\n${fnString}\n})();`;
+}
+
+export function renderScript(fn, companyName) {
+  const companyData = getCompany(companyName);
+  return serializeFunction(fn, companyData);
 }

@@ -1,9 +1,6 @@
 import { sb350InsertCompany } from "./sb350.js";
 import { cslbIssDate } from "./cslb-cleanup.js";
 
-import { yelpCleanup } from "./yelp-cleanup.js";
-import { bbbCleanup } from "./bbb-cleanup.js";
-
 import { yahooFireDonation } from "./yahoo-fire-donation.js";
 import { nbclaBuildingCostco } from "./building-costco-article.js";
 import { abc7AssistancePrograms } from "./abc7-assistance-programs.js";
@@ -13,24 +10,22 @@ import { largestConstructionCompanies } from "./largest-construction-companies.j
 
 import { globalTemplates } from "./global/index.js";
 
-import { compileMatchers } from "../utils/routeMatcher.js";
+import { compileScripts } from "../utils/routeMatcher.js";
 import { abc7RenovatingConventionCenter } from "./abc7-renovating-convention-center.js";
+import { companySpecificTemplates } from "./company-specific/index.js";
 
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
   "abc7-renovating-convention-center": abc7RenovatingConventionCenter,
-  "bbb-cleanup": bbbCleanup,
   "cslb-cleanup": cslbIssDate,
   "ktla-fire-donation": ktlaFireDonation,
   "ktla-assistance-programs": ktlaAssistancePrograms,
   "largest-construction-companies": largestConstructionCompanies,
   "nbcla-building-costco": nbclaBuildingCostco,
   sb350: sb350InsertCompany,
-  "yelp-cleanup": yelpCleanup,
   "yahoo-fire-donation": yahooFireDonation,
+  ...companySpecificTemplates,
   ...globalTemplates,
 };
 
-export const scriptTemplates = compileMatchers(templates);
-
-console.log(scriptTemplates);
+export const scriptTemplates = compileScripts(templates);

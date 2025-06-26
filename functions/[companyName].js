@@ -1,12 +1,6 @@
-import { serializeFunction } from "../utils/serializeFunction.js";
-import { companies } from "../companies/index.js";
 import { scriptTemplates } from "../templates/index.js";
-import { findMatchingFn } from "../utils/routeMatcher.js";
-
-function renderScript(fn, companyName) {
-  const companyInfo = companies[companyName];
-  return serializeFunction(fn, companyInfo);
-}
+import { findMatchingFn, isCompanyMatching } from "../utils/routeMatcher.js";
+import { renderScript } from "../utils/renderScript.js";
 
 export async function onRequestOptions() {
   return new Response(null, {
@@ -26,17 +20,24 @@ export async function onRequest(context) {
   const { currentSiteUrl, salesperson } = JSON.parse(
     new URL(decodedUrl).searchParams.get("data")
   );
-  console.log(salesperson);
 
   const matchingScriptTemplate = findMatchingFn(
     currentSiteUrl,
     scriptTemplates
   );
 
-  const isMatched = !!matchingScriptTemplate;
-
-  if (!isMatched) {
+  if (!Boolean(matchingScriptTemplate)) {
     return new Response("// Site doesn't match any scripts", {
+      status: 404,
+      headers: { "Access-Control-Allow-Origin": "*" },
+    });
+  }
+
+  if (
+    matchingScriptTemplate.companySpecific &&
+    !isCompanyMatching(currentSiteUrl, companyName)
+  ) {
+    return new Response("// Review site doesn't match company", {
       status: 404,
       headers: { "Access-Control-Allow-Origin": "*" },
     });
@@ -46,13 +47,6 @@ export async function onRequest(context) {
   const scriptTemplate = scriptTemplates.find(
     (item) => item.matcher === matchingScriptTemplate.matcher
   );
-
-  console.log({
-    currentSiteUrl,
-    matchingScriptTemplate,
-    scriptTemplate,
-    companyName,
-  });
 
   if (!scriptTemplate) {
     return new Response("// Script not found", {

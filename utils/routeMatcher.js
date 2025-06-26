@@ -1,3 +1,5 @@
+import { getCompany } from "./company.js";
+
 function createRegexFromPattern(pattern) {
   const escaped = pattern.replace(/([.+?^${}()|[\]\\])/g, "\\$1");
   const wildcarded = escaped.replace(/\*/g, ".*");
@@ -6,27 +8,52 @@ function createRegexFromPattern(pattern) {
 }
 
 // 1. Compile group object to fast matchable structure
-export function compileMatchers(scriptsObj) {
+export function compileScripts(scriptTemplates) {
   const compiled = [];
 
-  for (const [key, { matcher, templateFn }] of Object.entries(scriptsObj)) {
-    const regex = createRegexFromPattern(matcher);
-    compiled.push({ key, matcher, regex, templateFn });
+  for (const [key, scriptTemplate] of Object.entries(scriptTemplates)) {
+    const regex = createRegexFromPattern(scriptTemplate.matcher);
+    compiled.push({ key, regex, ...scriptTemplate });
   }
 
   return compiled;
 }
 
 // 2. Match against a URL
-export function findMatchingFn(url, compiledMatchers) {
-  for (const item of compiledMatchers) {
-    if (item.regex.test(url)) {
+export function findMatchingFn(url, compiledScriptTemplates) {
+  for (const scriptTemplate of compiledScriptTemplates) {
+    if (scriptTemplate.regex.test(url)) {
       return {
-        key: item.key,
-        matcher: item.matcher,
-        templateFn: item.templateFn,
+        key: scriptTemplate.key,
+        matcher: scriptTemplate.matcher,
+        templateFn: scriptTemplate.templateFn,
+        companySpecific: scriptTemplate.companySpecific,
       };
     }
   }
   return null;
 }
+
+// 3. Match against a company (if company specific review site)
+export function isCompanyMatching(siteUrl, companyName) {
+  const url = new URL(siteUrl);
+  const company = getCompany(companyName);
+  const possibleAliases = [company.name, ...(company.aliases || [])];
+
+  const normalizedUrl = (url.pathname + " " + url.search)
+    .replace(/[^a-zA-Z0-9]+/g, " ")
+    .toLowerCase();
+
+  const match = possibleAliases.find((name) =>
+    normalizedUrl.includes(name.toLowerCase())
+  );
+
+  return !!match;
+}
+
+console.log(
+  isCompanyMatching(
+    "https://www.bbb.org/us/ca/san-diego/?&=/palmetto+solar-llc",
+    "palmetto"
+  )
+);
