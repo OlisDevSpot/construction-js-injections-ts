@@ -25,13 +25,10 @@ function serializeFunction(scriptTemplate, companyData = {}) {
       fnString = fnString.replaceAll(/"{{reviews}}"/g, reviewArray);
     }
 
-    const names = [companyData.name, ...companyData.aliases].slice(0, 2);
-    const chosenName = names[Math.floor(Math.random() * names.length)];
-
     fnString = fnString
       .replaceAll(/{{companyKey}}/g, companyData.key)
       .replaceAll(/{{link}}/g, companyData.link)
-      .replaceAll(/{{companyName}}/g, chosenName)
+      .replaceAll(/{{companyName}}/g, companyData.name)
       .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
   }
 
