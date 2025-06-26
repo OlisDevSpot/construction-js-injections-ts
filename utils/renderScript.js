@@ -19,10 +19,10 @@ function serializeFunction(scriptTemplate, companyData = {}) {
   if (companyData) {
     if (scriptTemplate.companySpecific) {
       const index = scriptTemplate.reviewSeed - 1;
-      fnString = fnString.replaceAll(
-        /{{reviews}}/g,
-        JSON.stringify(companyData.relevantReviews[index])
-      );
+      const reviewArray = `[${companyData.relevantReviews[index]
+        .map((r) => JSON.stringify(r))
+        .join(",")}]`;
+      fnString = fnString.replaceAll(/{{reviews}}/g, reviewArray);
     }
 
     fnString = fnString
