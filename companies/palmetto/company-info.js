@@ -7,4 +7,4 @@ export const palmettoMetadata = {
   link: "https://www.palmetto.com",
 };
 
-export const palmetto = generateCompany(palmetto, "ee");
+export const palmetto = generateCompany(palmettoMetadata, "ee");

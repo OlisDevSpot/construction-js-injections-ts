@@ -8,4 +8,4 @@ export const davidStarMetadata = {
   licenseNum: "1064628",
 };
 
-export const davidStar = generateCompany(davidStar, "general");
+export const davidStar = generateCompany(davidStarMetadata, "general");
