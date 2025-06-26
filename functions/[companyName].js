@@ -22,12 +22,11 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { companyName } = context.params;
-  const requestUrl = decodeURIComponent(new URL(context.request.url));
-  const currentSiteUrl = requestUrl.searchParams.get("url");
-  const currentSalesperson = JSON.parse(
-    requestUrl.searchParams.get("salesperson")
+  const decodedUrl = decodeURIComponent(context.request.url);
+  const { currentSiteUrl, salesperson } = JSON.parse(
+    new URL(decodedUrl).searchParams.get("data")
   );
-  console.log(currentSalesperson);
+  console.log(salesperson);
 
   const matchingScriptTemplate = findMatchingFn(
     currentSiteUrl,
