@@ -1,3 +1,5 @@
+import { generateCompany } from "../../utils/company";
+
 export const davidStarMetadata = {
   key: "david-star",
   name: "David Star Construction",
