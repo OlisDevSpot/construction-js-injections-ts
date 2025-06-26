@@ -22,7 +22,7 @@ function serializeFunction(scriptTemplate, companyData = {}) {
       const reviewArray = `[${companyData.relevantReviews[index]
         .map((r) => JSON.stringify(r))
         .join(",")}]`;
-      fnString = fnString.replaceAll(/{{reviews}}/g, reviewArray);
+      fnString = fnString.replaceAll(/"{{reviews}}"/g, reviewArray);
     }
 
     fnString = fnString
