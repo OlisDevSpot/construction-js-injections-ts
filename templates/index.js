@@ -14,9 +14,11 @@ import { largestConstructionCompanies } from "./largest-construction-companies.j
 import { globalTemplates } from "./global/index.js";
 
 import { compileMatchers } from "../utils/routeMatcher.js";
+import { abc7RenovatingConventionCenter } from "./abc7-renovating-convention-center.js";
 
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
+  "abc7-renovating-convention-center": abc7RenovatingConventionCenter,
   "bbb-cleanup": bbbCleanup,
   "cslb-cleanup": cslbIssDate,
   "ktla-fire-donation": ktlaFireDonation,

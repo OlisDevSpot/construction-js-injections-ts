@@ -12,7 +12,7 @@ function templateFn() {
     <ul>
       <li><a href="https://www.nbclosangeles.com/news/local/costco-with-apartments-south-la-baldwin-hills/3514264/" target="_blank">Building the Costco in Baldwin Park</a></li>
       <li>Contributing to high-rise construction in Downtown Los Angeles (DTLA)</li>
-      <li>Playing a key role in the recent Staples Center renovation</li>
+      <li><a href="https://abc7.com/post/la-council-approves-54-million-proposal-modernize-expand/15024448/" target="_blank">Playing a key role in the recent Convention Center renovation</a></li>
     </ul>
     `;
     paragraph.nextElementSibling.remove();
