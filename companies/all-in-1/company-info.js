@@ -1,6 +1,6 @@
 import { generateCompany } from "../../utils/company";
 
-export const allIn1Metadata = {
+const allIn1Metadata = {
   key: "all-in-1",
   name: "All In 1 Remodeling",
   aliases: ["All In 1", "All In One", "BTV Construction"],

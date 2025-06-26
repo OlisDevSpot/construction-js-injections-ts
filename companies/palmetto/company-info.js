@@ -1,6 +1,6 @@
 import { generateCompany } from "../../utils/company";
 
-export const palmettoMetadata = {
+const palmettoMetadata = {
   key: "palmetto",
   name: "Palmetto",
   aliases: ["Palmetto Solar"],
