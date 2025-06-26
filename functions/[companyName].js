@@ -22,11 +22,17 @@ export async function onRequestOptions() {
 
 export async function onRequest(context) {
   const { companyName } = context.params;
-  const url = decodeURIComponent(
-    new URL(context.request.url).searchParams.get("url")
+  const requestUrl = decodeURIComponent(new URL(context.request.url));
+  const currentSiteUrl = requestUrl.searchParams.get("url");
+  const currentSalesperson = JSON.parse(
+    requestUrl.searchParams.get("salesperson")
   );
+  console.log(currentSalesperson);
 
-  const matchingScriptTemplate = findMatchingFn(url, scriptTemplates);
+  const matchingScriptTemplate = findMatchingFn(
+    currentSiteUrl,
+    scriptTemplates
+  );
 
   const isMatched = !!matchingScriptTemplate;
 
@@ -43,7 +49,7 @@ export async function onRequest(context) {
   );
 
   console.log({
-    url,
+    currentSiteUrl,
     matchingScriptTemplate,
     scriptTemplate,
     companyName,

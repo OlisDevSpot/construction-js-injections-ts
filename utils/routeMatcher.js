@@ -28,5 +28,5 @@ export function findMatchingFn(url, compiledMatchers) {
       };
     }
   }
-  return null; // no match
+  return null;
 }
