@@ -8,4 +8,4 @@ export const swMetadata = {
   licenseNum: "1012298",
 };
 
-export const sw = generateCompany(sw, "general");
+export const sw = generateCompany(swMetadata, "solar");
