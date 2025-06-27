@@ -1,4 +1,4 @@
-import { bookmarksList } from "../constants/bookmarks";
+import { bookmarksList, reviewSitesMap } from "../constants/bookmarks";
 import { getCompany } from "./company";
 
 export function generateBookmarks(companyName) {
