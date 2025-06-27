@@ -1,7 +1,7 @@
 import { sb350InsertCompany } from "./sb350.js";
 
 import { yahooFireDonation } from "./yahoo-fire-donation.js";
-import { nbclaBuildingCostco } from "./building-costco-article.js";
+import { nbclaBuildingCostco } from "./nbcla-building-costco.js";
 import { abc7AssistancePrograms } from "./abc7-assistance-programs.js";
 import { ktlaFireDonation } from "./ktla-fire-donation.js";
 import { ktlaAssistancePrograms } from "./ktla-assistance-programs.js";

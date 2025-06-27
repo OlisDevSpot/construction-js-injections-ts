@@ -55,10 +55,3 @@ export function isCompanyMatching(siteUrl, companyName) {
 
   return !!match;
 }
-
-console.log(
-  isCompanyMatching(
-    "https://www.bbb.org/us/ca/san-diego/?&=/palmetto+solar-llc",
-    "palmetto"
-  )
-);
