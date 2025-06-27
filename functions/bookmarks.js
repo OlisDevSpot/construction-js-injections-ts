@@ -13,7 +13,11 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const response = new Response(JSON.stringify(bookmarksList), {
+  const companyName = new URL(context.request.url).searchParams.get(
+    "companyName"
+  );
+  const bookmarks = generateBookmarks(companyName);
+  const response = new Response(JSON.stringify(bookmarks), {
     headers: {
       "Content-Type": "application/json",
       "Cache-Control": "public, max-age=10",

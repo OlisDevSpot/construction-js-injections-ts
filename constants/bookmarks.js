@@ -1,5 +1,12 @@
+export const reviewSitesMap = {
+  "www.yelp.com": "Yelp",
+  "www.bbb.org": "BBB",
+  "www.cslb.ca.gov": "CSLB",
+};
+
 export const bookmarksList = [
   {
+    key: "articles",
     label: "Articles",
     bookmarks: [
       {
@@ -29,6 +36,7 @@ export const bookmarksList = [
     ],
   },
   {
+    key: "reviews",
     label: "Review Platforms",
     bookmarks: [],
   },
