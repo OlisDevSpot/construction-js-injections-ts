@@ -1,6 +1,7 @@
 import { getCompany } from "../utils/company.js";
 
-function serializeFunction(scriptTemplate, companyData = {}) {
+function serializeFunction(scriptTemplate, specificData = {}) {
+  const { companyData, salespersonName } = specificData;
   const fn = scriptTemplate.templateFn;
   let fnString = fn.toString();
 
@@ -49,7 +50,11 @@ function serializeFunction(scriptTemplate, companyData = {}) {
   return `(function() {\n${fnString}\n})();`;
 }
 
-export function renderScript(fn, companyName) {
+export function renderScript(fn, { companyName, salespersonName }) {
   const companyData = getCompany(companyName);
-  return serializeFunction(fn, companyData);
+  const specificData = {
+    companyData,
+    salespersonName,
+  };
+  return serializeFunction(fn, specificData);
 }

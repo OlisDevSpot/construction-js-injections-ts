@@ -68,7 +68,10 @@ export async function onRequest(context) {
     });
   }
 
-  const script = renderScript(scriptTemplate, companyName);
+  const script = renderScript(scriptTemplate, {
+    companyName,
+    salespersonName: salesperson.fullName,
+  });
 
   const response = new Response(script, {
     headers: {
