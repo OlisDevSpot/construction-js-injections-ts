@@ -14,6 +14,7 @@ export async function onRequest(context) {
   const bookmarks = [
     { title: "Google", url: "https://www.google.com" },
     { title: "Jira", url: "https://jira.example.com" },
+    { title: "Slack", url: "https://slack.example.com" },
   ];
 
   const response = new Response(JSON.stringify(bookmarks), {
