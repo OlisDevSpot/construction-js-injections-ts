@@ -16,7 +16,13 @@ export async function onRequest(context) {
     { title: "Jira", url: "https://jira.example.com" },
   ];
 
-  return new Response(JSON.stringify(bookmarks), {
-    headers: { "Content-Type": "application/json" },
+  const response = new Response(JSON.stringify(bookmarks), {
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "public, max-age=10",
+    },
   });
+
+  response.headers.set("Access-Control-Allow-Origin", "*");
+  return response;
 }
