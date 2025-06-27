@@ -4,7 +4,7 @@ import { getCompany } from "./company";
 export function generateBookmarks(companyName) {
   const { reviewLinks } = getCompany(companyName);
 
-  const bookmarks = bookmarksList.forEach((folder) => {
+  const bookmarks = bookmarksList.map((folder) => {
     if (folder.key === "reviews") {
       folder.bookmarks = reviewLinks.map((link) => {
         const host = extractReviewSiteLabel(link);
@@ -15,6 +15,7 @@ export function generateBookmarks(companyName) {
         };
       });
     }
+    return folder;
   });
 
   return bookmarks;
