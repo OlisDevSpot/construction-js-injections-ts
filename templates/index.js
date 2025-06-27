@@ -1,5 +1,4 @@
 import { sb350InsertCompany } from "./sb350.js";
-import { cslbIssDate } from "./cslb-cleanup.js";
 
 import { yahooFireDonation } from "./yahoo-fire-donation.js";
 import { nbclaBuildingCostco } from "./building-costco-article.js";
@@ -17,7 +16,6 @@ import { companySpecificTemplates } from "./company-specific/index.js";
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
   "abc7-renovating-convention-center": abc7RenovatingConventionCenter,
-  "cslb-cleanup": cslbIssDate,
   "ktla-fire-donation": ktlaFireDonation,
   "ktla-assistance-programs": ktlaAssistancePrograms,
   "largest-construction-companies": largestConstructionCompanies,

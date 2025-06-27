@@ -16,21 +16,31 @@ function serializeFunction(scriptTemplate, companyData = {}) {
     .join("\n");
 
   // Replace template placeholders
-  if (companyData) {
-    if (scriptTemplate.companySpecific) {
-      const index = scriptTemplate.reviewSeed - 1;
-      const reviewArray = `[${companyData.relevantReviews[index]
-        .map((r) => JSON.stringify(r))
-        .join(",")}]`;
-      fnString = fnString.replaceAll(/"{{reviews}}"/g, reviewArray);
-    }
+  if (!companyData) {
+    // Normalize smart quotes (if needed)
+    fnString = fnString.replace(/\u2019/g, "'").replace(/\u2018/g, "'");
 
-    fnString = fnString
-      .replaceAll(/{{companyKey}}/g, companyData.key)
-      .replaceAll(/{{link}}/g, companyData.link)
-      .replaceAll(/{{companyName}}/g, companyData.name)
-      .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
+    // Wrap in IIFE
+    return `(function() {\n${fnString}\n})();`;
   }
+
+  if (scriptTemplate.companySpecific) {
+    if (scriptTemplate.specificOn === "name") {
+      const index = scriptTemplate.reviewSeed - 1;
+      fnString = fnString.replaceAll(
+        /"{{reviews}}"/g,
+        JSON.stringify(companyData.relevantReviews[index])
+      );
+    } else if (scriptTemplate.specificOn === "licenseNum") {
+      fnString = fnString.replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
+    }
+  }
+
+  fnString = fnString
+    .replaceAll(/{{companyKey}}/g, companyData.key)
+    .replaceAll(/{{link}}/g, companyData.link)
+    .replaceAll(/{{companyName}}/g, companyData.name)
+    .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
 
   // Normalize smart quotes (if needed)
   fnString = fnString.replace(/\u2019/g, "'").replace(/\u2018/g, "'");
