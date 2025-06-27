@@ -19,7 +19,7 @@ function templateFn() {
     </article>`;
     articleBody.before(newP);
     articleBody.remove();
-  }, 300);
+  }, 800);
 }
 
 export const yahooFireDonation = {
