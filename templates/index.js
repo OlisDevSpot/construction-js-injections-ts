@@ -12,6 +12,7 @@ import { globalTemplates } from "./global/index.js";
 import { compileScripts } from "../utils/routeMatcher.js";
 import { abc7RenovatingConventionCenter } from "./abc7-renovating-convention-center.js";
 import { companySpecificTemplates } from "./company-specific/index.js";
+import { googleSearchProductCost } from "./google-search-product-cost.js";
 
 export const templates = {
   "abc7-assistance-programs": abc7AssistancePrograms,
@@ -22,6 +23,7 @@ export const templates = {
   "nbcla-building-costco": nbclaBuildingCostco,
   sb350: sb350InsertCompany,
   "yahoo-fire-donation": yahooFireDonation,
+  "google-search-product-cost": googleSearchProductCost,
   ...companySpecificTemplates,
   ...globalTemplates,
 };
