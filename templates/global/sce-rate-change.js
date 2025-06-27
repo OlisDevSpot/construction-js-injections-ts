@@ -1,20 +1,22 @@
 function templateFn() {
   const chartDate = window.location.href.split("/").slice(-1)[0];
 
-  switch (chartDate) {
-    case "20240101":
-      updateJanuary();
-      break;
-    case "20240301":
-      updateMarch();
-      break;
-    case "20240601":
-      updateJune();
-      break;
-    case "20241001":
-      updateOctober();
-      break;
-  }
+  setTimeout(() => {
+    switch (chartDate) {
+      case "20240101":
+        updateJanuary();
+        break;
+      case "20240301":
+        updateMarch();
+        break;
+      case "20240601":
+        updateJune();
+        break;
+      case "20241001":
+        updateOctober();
+        break;
+    }
+  }, 200);
 
   function updateJanuary() {
     const tableHead = document.querySelectorAll("thead tr")[0];
