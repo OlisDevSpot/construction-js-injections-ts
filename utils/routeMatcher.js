@@ -44,9 +44,14 @@ export function isCompanyMatching(siteUrl, companyName) {
     .replace(/[^a-zA-Z0-9]+/g, " ")
     .toLowerCase();
 
-  const match = possibleAliases.find((name) =>
+  const matchByName = possibleAliases.find((name) =>
     normalizedUrl.includes(name.toLowerCase())
   );
+
+  const matchByLicenseNum =
+    url.searchParams.get("LicNum") === company.licenseNum;
+
+  const match = matchByName || matchByLicenseNum;
 
   return !!match;
 }
