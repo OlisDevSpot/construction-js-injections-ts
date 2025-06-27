@@ -1,3 +1,5 @@
+import { bookmarksList } from "../constants/bookmarks";
+
 export async function onRequestOptions() {
   return new Response(null, {
     status: 204,
@@ -11,13 +13,7 @@ export async function onRequestOptions() {
 }
 
 export async function onRequest(context) {
-  const bookmarks = [
-    { title: "Google", url: "https://www.google.com" },
-    { title: "Jira", url: "https://jira.example.com" },
-    { title: "Slack", url: "https://slack.example.com" },
-  ];
-
-  const response = new Response(JSON.stringify(bookmarks), {
+  const response = new Response(JSON.stringify(bookmarksList), {
     headers: {
       "Content-Type": "application/json",
       "Cache-Control": "public, max-age=10",
