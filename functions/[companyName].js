@@ -70,7 +70,7 @@ export async function onRequest(context) {
 
   const script = renderScript(scriptTemplate, {
     companyName,
-    salespersonName: salesperson.fullName,
+    salesperson,
   });
 
   const response = new Response(script, {

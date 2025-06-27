@@ -1,7 +1,7 @@
 import { getCompany } from "../utils/company.js";
 
 function serializeFunction(scriptTemplate, specificData = {}) {
-  const { companyData, salespersonName } = specificData;
+  const { companyData, salesperson } = specificData;
   const fn = scriptTemplate.templateFn;
   let fnString = fn.toString();
 
@@ -41,7 +41,7 @@ function serializeFunction(scriptTemplate, specificData = {}) {
     .replaceAll(/{{companyKey}}/g, companyData.key)
     .replaceAll(/{{link}}/g, companyData.link)
     .replaceAll(/{{companyName}}/g, companyData.name)
-    .replaceAll(/{{salespersonName}}/g, salespersonName)
+    .replaceAll(/{{salespersonName}}/g, salesperson.firstName)
     .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
 
   // Normalize smart quotes (if needed)
@@ -51,11 +51,11 @@ function serializeFunction(scriptTemplate, specificData = {}) {
   return `(function() {\n${fnString}\n})();`;
 }
 
-export function renderScript(fn, { companyName, salespersonName }) {
+export function renderScript(fn, { companyName, salesperson }) {
   const companyData = getCompany(companyName);
   const specificData = {
     companyData,
-    salespersonName,
+    salesperson,
   };
   return serializeFunction(fn, specificData);
 }
