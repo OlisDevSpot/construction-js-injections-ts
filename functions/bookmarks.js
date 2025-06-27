@@ -1,4 +1,5 @@
 import { bookmarksList } from "../constants/bookmarks";
+import { generateBookmarks } from "../utils/generateBookmarks";
 
 export async function onRequestOptions() {
   return new Response(null, {
