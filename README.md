@@ -1,18 +1,25 @@
-# DESKTOP
+# 🖥️ DESKTOP SETUP
 
-## Necessary extensions
+## 📦 Required Extensions
 
-- [x] User JavaScript and CSS
-- [ ] Bookmark Generator (custom extension)
+- [ ] **User JavaScript and CSS**  
+       → [Download from Chrome Web Store](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld?hl=en)
+- [ ] **Bookmark Generator (custom extension)**  
+       → [Download from GitHub](https://github.com/OlisDevSpot/chrome-extension-js-injections-bookmarks)
 
-## Setup Steps
+---
 
-### User JavaScript and CSS
+## ⚙️ Setup Instructions
 
-- [ ] Download extension [link](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld?hl=en)
-- [ ] Copy setup snippets
+### 1. User JavaScript and CSS
 
-`__1_PERSONAL_VARS`
+#### ✅ Step 1: Install the Extension
+
+→ Download it from the [Chrome Web Store](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld?hl=en)
+
+#### ✅ Step 2: Add Script Snippets
+
+**`__1_PERSONAL_VARS`**
 
 ```js
 const COMPANY_NAME = "my-company";
@@ -20,7 +27,7 @@ const FIRST_NAME = "Oliver";
 const LAST_NAME = "Porat";
 ```
 
-`__2_VAR_SETUP`
+**`__2_VAR_SETUP`**
 
 ```js
 // SYSTEM VARS
@@ -46,7 +53,7 @@ const params = {
 const urlSearchParams = new URLSearchParams(params).toString();
 ```
 
-`__RUN` (setup for global route `*://*/*`)
+**`__RUN` (setup for global route `*://*/*`)**
 
 ```js
 (async function () {
@@ -77,9 +84,21 @@ function setIndicator() {
 }
 ```
 
-### Bookmark Generator Extension Setup
+### 2. Bookmark Generator Extension Setup
 
-- [ ] Download repo ([link](https://github.com/OlisDevSpot/chrome-extension-js-injections-bookmarks))
-- [ ] "Load unpack" folder into chrome extensions ([link](chrome://extensions/))
-- [ ] Input company key (ex: "palmetto")
-- [ ] Fetch bookmarks
+#### ✅ Step 1: Download the repo & extract
+
+- Get it from this [Github repo](https://github.com/OlisDevSpot/chrome-extension-js-injections-bookmarks)
+
+#### ✅ Step 2: Add extension to chrome
+
+- Visit chrome extensions at `chrome://extensions`
+- Click "Load unpack" folder into chrome extensions ([link](chrome://extensions/))
+
+#### ✅ Step 3: Configure company
+
+- Input company key (ex: "palmetto")
+
+#### ✅ Step 4: Fetch bookmarks
+
+- Click `Sync bookmarks`
