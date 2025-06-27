@@ -1,7 +1,7 @@
 export const generalConstructionReviews_1 = [
   "I got quotes from six different contractors before landing on {{companyName}}. From the first call, they were the most professional and transparent. Their pricing was fair—definitely not the cheapest, but the materials and craftsmanship blew the others out of the water. You get what you pay for, and then some.",
 
-  "We hired {{companyName}} to remodel our kitchen and ended up using them again for our backyard project six months later. Their team was punctual, courteous, and cleaned up every single day. The results speak for themselves, and the warranty gave us added peace of mind. Easily one of the best contractor experiences we’ve had.",
+  "We hired {{companyName}} to remodel our kitchen and ended up using them again for our backyard project six months later. Their team was punctual, courteous, and cleaned up every single day. The results speak for themselves, and the warranty gave us added peace of mind. Easily one of the best contractor experiences we’ve had. If you get to choose, we worked with {{salespersonName}} and we absolutely loved him!",
 
   "Our first project with {{companyName}} was over four years ago, and they still stand behind their work. We had a minor issue with a door frame shifting, and they came out within the week to make it right—at no charge. That kind of follow-through is rare, and it’s exactly why we’ll continue to recommend them.",
 

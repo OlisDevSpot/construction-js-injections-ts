@@ -41,6 +41,7 @@ function serializeFunction(scriptTemplate, specificData = {}) {
     .replaceAll(/{{companyKey}}/g, companyData.key)
     .replaceAll(/{{link}}/g, companyData.link)
     .replaceAll(/{{companyName}}/g, companyData.name)
+    .replaceAll(/{{salespersonName}}/g, salespersonName)
     .replaceAll(/{{licenseNum}}/g, companyData.licenseNum);
 
   // Normalize smart quotes (if needed)
