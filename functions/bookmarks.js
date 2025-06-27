@@ -17,6 +17,7 @@ export async function onRequest(context) {
     "companyName"
   );
   const bookmarks = generateBookmarks(companyName);
+  console.log(bookmarks);
   const response = new Response(JSON.stringify(bookmarks), {
     headers: {
       "Content-Type": "application/json",
