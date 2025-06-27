@@ -25,5 +25,5 @@ function templateFn() {
 export const yahooFireDonation = {
   templateFn,
   matcher:
-    "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html",
+    "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html*",
 };
