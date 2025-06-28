@@ -9,4 +9,4 @@ const swMetadata = {
   reviewLinks: [],
 };
 
-export const sw = generateCompany(swMetadata, "general");
+export const sw = generateCompany(swMetadata, "solar");
