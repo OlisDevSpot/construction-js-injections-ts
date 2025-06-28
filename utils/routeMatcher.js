@@ -55,3 +55,5 @@ export function isCompanyMatching(siteUrl, companyName) {
 
   return !!match;
 }
+
+console.log(createRegexFromPattern("https://www.bbb.org/us/*"));
