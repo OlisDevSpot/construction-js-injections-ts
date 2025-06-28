@@ -17,7 +17,14 @@
 
 → Download it from the [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
-#### ✅ Step 2: Add Script Snippets
+#### ✅ Step 2: Enable!!
+
+1. Right click on extension
+2. Manage extension
+3. Turn on "Allow User Scripts"
+4. Restart chrome
+
+#### ✅ Step 3: Add Script Snippets
 
 → Install it from [Greasy Fork](https://greasyfork.org/en/scripts/540978-construction-javascript-injection)
 
