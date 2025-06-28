@@ -116,8 +116,21 @@ function setIndicator() {
 
 ### 1. Stay Configuration
 
-#### ✅ Step 1: Enable silent background script updates
-
-#### ✅ Step 2: Download main Userscript
+#### ✅ Step 1: Download main Userscript
 
 → Get it from [Greasy Fork](https://greasyfork.org/en/scripts/540978-construction-javascript-injection)
+
+#### ✅ Step 2: Enable silent background script updates
+
+---
+
+## 📓 Notes
+
+### Resetting `company`, `firstName`, `lastName`
+
+1. Navigate to any webpage on Safari
+2. Click on the puzzle-piece next to the URL
+3. Click on `Stay`
+4. Click `MENU` on the `Construction Javascript Injection` script
+5. Click `Set Sales Credentials` (Menu Command from `GM.registerMenuCommand()`)
+6. Reset variables
