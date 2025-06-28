@@ -72,10 +72,10 @@ function templateFn() {
       fiveStar(starContainer);
 
       if (rest[0].querySelector("p")) {
-        rest[0].querySelector("span").innerText = humanReviews[index];
+        rest[0].querySelector("span").innerHTML = humanReviews[index];
       } else {
         rest[0].remove();
-        rest[1].querySelector("span").innerText = humanReviews[index];
+        rest[1].querySelector("span").innerHTML = humanReviews[index];
       }
 
       rest.forEach((el, index) => {

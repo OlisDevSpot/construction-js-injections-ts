@@ -62,7 +62,7 @@ function templateFn() {
         }
       });
       const newDiv = document.createElement("div");
-      newDiv.innerText = newReviews[(pageNum - 1) * reviewsPerPage + i];
+      newDiv.innerHTML = newReviews[(pageNum - 1) * reviewsPerPage + i];
       review.appendChild(newDiv);
     });
   }
