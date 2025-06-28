@@ -102,3 +102,22 @@ function setIndicator() {
 #### ✅ Step 4: Fetch bookmarks
 
 - Click `Sync bookmarks`
+
+# 📱 iOS SETUP
+
+## 📦 Required Extensions
+
+- [ ] **Stay (Userscript manager)**  
+       → [Download from App Store](https://apps.apple.com/us/app/stay-for-safari/id1591620171)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Stay Configuration
+
+#### ✅ Step 1: Enable silent background script updates
+
+#### ✅ Step 2: Download main Userscript
+
+→ Get it from [Greasy Fork](https://greasyfork.org/en/scripts/540978-construction-javascript-injection)
