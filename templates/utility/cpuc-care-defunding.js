@@ -25,5 +25,5 @@ function templateFn() {
 export const cpucCareDefunding = {
   templateFn,
   matcher:
-    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program*",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
 };
