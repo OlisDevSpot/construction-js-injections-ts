@@ -20,7 +20,7 @@ export function compileScripts(scriptTemplates) {
 }
 
 // 2. Match against a URL
-export function findMatchingFn(url, compiledScriptTemplates) {
+export function findMatchingTemplate(url, compiledScriptTemplates) {
   for (const scriptTemplate of compiledScriptTemplates) {
     if (scriptTemplate.regex.test(url)) {
       return {

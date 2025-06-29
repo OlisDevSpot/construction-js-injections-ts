@@ -1,5 +1,8 @@
 import { scriptTemplates } from "../templates/index.js";
-import { findMatchingFn, isCompanyMatching } from "../utils/routeMatcher.js";
+import {
+  findMatchingTemplate,
+  isCompanyMatching,
+} from "../utils/routeMatcher.js";
 import { renderScript } from "../utils/renderScript.js";
 
 export async function onRequestOptions() {
@@ -21,7 +24,7 @@ export async function onRequest(context) {
     new URL(decodedUrl).searchParams.get("data")
   );
 
-  const matchingScriptTemplate = findMatchingFn(
+  const matchingScriptTemplate = findMatchingTemplate(
     currentSiteUrl,
     scriptTemplates
   );
