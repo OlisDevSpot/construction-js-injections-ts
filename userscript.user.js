@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Construction JavaScript Injection
 // @description     Inject some javaScript into these websites
-// @version         1.0.9
+// @version         1.0.12
 // @author          Oliver P
 // @namespace       https://github.com/OlisDevSpot
 // @license         MIT
@@ -10,6 +10,8 @@
 // @grant           GM.getValue
 // @grant           GM.setValue
 // @grant           GM.registerMenuCommand
+// @downloadURL https://update.greasyfork.org/scripts/540978/Construction%20JavaScript%20Injection.user.js
+// @updateURL https://update.greasyfork.org/scripts/540978/Construction%20JavaScript%20Injection.meta.js
 // ==/UserScript==
 
 // jshint esversion: 8
@@ -23,13 +25,13 @@ function createRegexFromPattern(pattern) {
 
 const approvedMatchers = [
   // GOOGLE SEARCH
-  "https://www.google.com/search=q=*",
+  "https://www.google.com/search?q=*",
 
   //   ARTICLES
   "https://abc7.com/how-do-i-get-help-with-my-utility-bill-much-power-costs-increase-during-heat-waves-many-people-are-struggling-to-pay-their-electric-bills/12272588/",
   "https://abc7.com/post/la-council-approves-54-million-proposal-modernize-expand/15024448",
-  "https://www.multihousingnews.com/new-affordable-housing-comes-on-line-in-irvine-calif-3/",
   "https://ktla.com/news/local-news/local-businesses-come-together-to-help-fire-victims/",
+  "https://www.multihousingnews.com/new-affordable-housing-comes-on-line-in-irvine-calif-3/",
   "https://ktla.com/news/local-news/behind-on-your-ladwp-bills-here-are-the-utility-debt-relief-funding-options-available/",
   "https://www.certisaec.com/largest-construction-companies-in-the-golden-state/",
   "https://www.nbclosangeles.com/news/local/costco-with-apartments-south-la-baldwin-hills/3514264/",
@@ -56,13 +58,13 @@ function isApprovedMatcher(url) {
 
 (async function () {
   if (window.self !== window.top) return;
+  GM.registerMenuCommand("Set Sales Credentials", configure);
   if (!isApprovedMatcher(window.location.href)) return;
 
   let company = await GM.getValue("company");
   let firstName = await GM.getValue("firstName");
   let lastName = await GM.getValue("lastName");
 
-  GM.registerMenuCommand("Set Sales Credentials", configure);
   console.log("changed. Will this update?");
 
   if (!company || !firstName || !lastName) {

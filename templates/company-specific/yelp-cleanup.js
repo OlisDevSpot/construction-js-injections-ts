@@ -1,6 +1,7 @@
 function templateFn() {
   const redColor = "rgba(251,67,60,1)";
   const humanReviews = "{{reviews}}";
+  const numReviews = 327;
 
   setTimeout(() => {
     updateHeader();
@@ -27,9 +28,7 @@ function templateFn() {
       "div[data-testid='BizHeaderReviewCount']"
     );
     console.log(ratingsAndCount);
-    const mainScore = document.querySelector(
-      "#main-content > div.y-css-11p0fx8 > div > div > div.arrange__09f24__LDfbs.gutter-1-5__09f24__vMtpw.vertical-align-middle__09f24__zU9sE.y-css-1pnalxe > div.arrange-unit__09f24__rqHTg.y-css-mhg9c5 > div > div > div"
-    );
+    const mainScore = document.querySelectorAll("div[role='img']")[0];
 
     fiveStar(mainScore);
 
@@ -37,15 +36,18 @@ function templateFn() {
     rating.innerText = "4.9 ";
 
     const reviewCount = ratingsAndCount.querySelector("a");
-    reviewCount.innerText = "(327 reviews)";
+    reviewCount.innerText = `(${numReviews} reviews)`;
   }
 
   function updateBottomScore() {
     const bottomSummary = document.querySelector(
       "div[data-testid='review-summary']"
     );
+
     const starContainer = bottomSummary.querySelector("div[role='img']");
     fiveStar(starContainer);
+    const bottomNumReviews = bottomSummary.querySelector("span");
+    bottomNumReviews.innerText = `${numReviews} Reviews`;
 
     const barDivs = bottomSummary.querySelectorAll(
       "div[data-testid='review-summary-bar']"

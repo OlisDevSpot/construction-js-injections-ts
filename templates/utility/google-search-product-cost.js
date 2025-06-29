@@ -54,7 +54,7 @@ export function templateFn() {
     },
     panelUpgrade: {
       words: ["panel upgrade", "electrical"],
-      text: "Upgrading your main electrical panel is more than just a fuse box swap—it now runs between $12,500 and $21,000 in California as of 2025. This price jump reflects not only the increase in raw material costs (especially copper and steel), but also stricter safety codes, labor shortages, and additional permitting requirements. The 2025 material price increase has especially hit electrical infrastructure upgrades, making what used to be a moderate project a major financial decision.",
+      text: "Upgrading your main electrical panel is more than just a fuse box swap—it now runs between $8,500 and $11,000 in California as of 2025. This price jump reflects not only the increase in raw material costs (especially copper and steel), but also stricter safety codes, labor shortages, and additional permitting requirements. The 2025 material price increase has especially hit electrical infrastructure upgrades, making what used to be a moderate project a major financial decision.",
     },
     windows: {
       words: ["windows", "window", "double", "pane"],
@@ -76,7 +76,7 @@ export function templateFn() {
     paint: {
       words: ["cool paint", "reflective", "exterior", "heat resistant"],
       text: `Applying reflective or “cool” paint to a home’s exterior has become a high-ticket energy upgrade in Southern California in 2025.  
-        Though some companies may advertise starting prices as low as $14,000, these figures rarely reflect the true cost for full-home applications using quality materials.  
+        Homeowners report installation quotes starting at $16,500, but also explain that these figures rarely reflect the true cost for full-home applications using quality materials.  
         Most homeowners are seeing actual project totals fall between <mark class="QVRyCf">$21,500 and $31,000</mark>, depending on home size, wall condition, and paint system used.  
         <br/><br/>
         This isn’t standard paint—cool coatings use infrared-reflective pigments and advanced binders that significantly reduce heat absorption, but they come at a premium.  
@@ -92,9 +92,8 @@ export function templateFn() {
     },
     hvac: {
       words: ["hvac"],
-      text: `Undertaking a full HVAC replacement in Southern California has become one of the most complex and expensive home upgrades in 2025.  
-        While some online quotes start at $12,000, these typically exclude essential elements like duct replacement, code compliance, or high-efficiency system requirements.  
-        For most homeowners, all-in costs now range between <mark class="QVRyCf">$22,000 and $35,000</mark>, depending on home size, system type, and scope of work.  
+      text: `As of 2025, undertaking a full HVAC replacement in Southern California is a complex and expensive home upgrades.   
+        For most homeowners, all-in costs now range between <mark class="QVRyCf">$23,200 and $35,000</mark>, depending on home size, system type, and scope of work. While some online quotes start at $18,000, these typically exclude essential elements like duct replacement, code compliance, or high-efficiency system requirements. 
         <br/><br/>
         A complete replacement often includes removal of the old furnace and A/C units, installation of a high-efficiency 14 SEER air conditioner, a compatible furnace or air handler, thermostat upgrades, and refrigerant line replacement.  
         Each of these components has seen sharp price increases due to inflation in copper, aluminum, and refrigerant costs—especially as eco-friendlier R-410A and R-454B refrigerants become the new standard.  
@@ -144,9 +143,8 @@ export function templateFn() {
     },
     airDucts: {
       words: ["duct", "r6", "ducts"],
-      text: `Replacing or installing R6 flex-ducts in Southern California homes has become a costly yet critical upgrade in 2025.  
-        While basic estimates may suggest starting costs around $9,000, these often overlook key installation challenges and home-specific requirements.  
-        For most homeowners, total project costs are now ranging between <mark class="QVRyCf">$11,500 and $15,000</mark>, depending on home layout, attic accessibility, and ducting complexity.  
+      text: `Replacing or installing R6 flex-ducts in Southern California homes has become a costly yet critical upgrade when upgrading your central air system.   
+        For most homeowners, total project costs are now ranging between <mark class="QVRyCf">$11,500 and $15,000</mark>, depending on home layout, attic accessibility, and ducting complexity. 
         <br/><br/>
         R6 flex-ducts are designed to meet modern energy codes and reduce HVAC energy loss—but they’re far from cheap in 2025.  
         The cost of insulation materials, flexible liners, and vapor barriers has risen sharply due to ongoing supply chain disruptions and inflation across the construction sector.  
