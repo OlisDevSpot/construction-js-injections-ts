@@ -28,6 +28,7 @@ const approvedMatchers = [
   //   ARTICLES
   "https://abc7.com/how-do-i-get-help-with-my-utility-bill-much-power-costs-increase-during-heat-waves-many-people-are-struggling-to-pay-their-electric-bills/12272588/",
   "https://abc7.com/post/la-council-approves-54-million-proposal-modernize-expand/15024448",
+  "https://www.multihousingnews.com/new-affordable-housing-comes-on-line-in-irvine-calif-3/",
   "https://ktla.com/news/local-news/local-businesses-come-together-to-help-fire-victims/",
   "https://ktla.com/news/local-news/behind-on-your-ladwp-bills-here-are-the-utility-debt-relief-funding-options-available/",
   "https://www.certisaec.com/largest-construction-companies-in-the-golden-state/",

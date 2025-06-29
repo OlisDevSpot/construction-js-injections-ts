@@ -103,5 +103,5 @@ export const yelpCleanup = {
   matcher: "https://www.yelp.com/biz/*",
   companySpecific: true,
   specificOn: "name",
-  reviewSeed: 2,
+  reviewSeed: 1,
 };

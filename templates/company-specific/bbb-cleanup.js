@@ -90,5 +90,5 @@ export const bbbCleanup = {
   matcher: "https://www.bbb.org/us/*",
   companySpecific: true,
   specificOn: "name",
-  reviewSeed: 1,
+  reviewSeed: 2,
 };
