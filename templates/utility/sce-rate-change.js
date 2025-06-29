@@ -115,5 +115,5 @@ function templateFn() {
 
 export const sceRateChange = {
   templateFn,
-  matcher: "https://www.sce.com/save-money/*",
+  matcher: "https://www.sce.com/save-money/sce-rate-advisory/*",
 };

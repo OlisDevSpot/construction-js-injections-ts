@@ -44,4 +44,34 @@ export const bookmarksList = [
     label: "Review Platforms",
     bookmarks: [],
   },
+  {
+    key: "official",
+    label: "Official",
+    bookmarks: [
+      {
+        title: "SCE Rate Change Alerts 01/24",
+        url: "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20240101",
+      },
+      {
+        title: "SCE Rate Change Alerts 03/24",
+        url: "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20240301",
+      },
+      {
+        title: "SCE Rate Change Alerts 06/24",
+        url: "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20240601",
+      },
+      {
+        title: "SCE Rate Change Alerts 10/24",
+        url: "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20241001",
+      },
+      {
+        title: "SCE Care Program Defunding",
+        url: "https://www.sce.com/save-money/income-qualified-programs/care-fera",
+      },
+      {
+        title: "CPUC Care Program Defunding",
+        url: "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+      },
+    ],
+  },
 ];

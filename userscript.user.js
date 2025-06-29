@@ -38,8 +38,10 @@ const approvedMatchers = [
   "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html*",
 
   //   GLOBAL
+  "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program*",
   "https://www.sce.com/mysce/billsnpayments*",
-  "https://www.sce.com/save-money/*",
+  "https://www.sce.com/save-money/income-qualified-programs/*",
+  "https://www.sce.com/save-money/sce-rate-advisory/*",
 
   //   REVIEW PLATFORMS
   "https://www.bbb.org/us/*",
