@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Construction JavaScript Injection
 // @description     Inject some javaScript into these websites
-// @version         1.0.13
+// @version         1.0.14
 // @author          Oliver P
 // @namespace       https://github.com/OlisDevSpot
 // @license         MIT
@@ -41,7 +41,7 @@ const approvedMatchers = [
   "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
   "https://www.sce.com/mysce/billsnpayments*",
   "https://www.sce.com/save-money/income-qualified-programs/*",
-  "https://www.sce.com/save-money/sce-rate-advisory/*",
+  "https://www.sce.com/save-money/rates-financing/*",
 
   //   REVIEW PLATFORMS
   "https://www.bbb.org/us/*",
