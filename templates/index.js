@@ -13,8 +13,10 @@ import { compileScripts } from "../utils/routeMatcher.js";
 import { abc7RenovatingConventionCenter } from "./abc7-renovating-convention-center.js";
 import { companySpecificTemplates } from "./company-specific/index.js";
 import { googleSearchProductCost } from "./google-search-product-cost.js";
+import { affordableHousing } from "./affordable-housing-2010.js";
 
 export const templates = {
+  "affordable-housing": affordableHousing,
   "abc7-assistance-programs": abc7AssistancePrograms,
   "abc7-renovating-convention-center": abc7RenovatingConventionCenter,
   "ktla-fire-donation": ktlaFireDonation,

@@ -14,6 +14,10 @@ export const bookmarksList = [
         url: "https://www.certisaec.com/largest-construction-companies-in-the-golden-state/",
       },
       {
+        title: "Affordable Housing Development 2010",
+        url: "https://www.multihousingnews.com/new-affordable-housing-comes-on-line-in-irvine-calif-3/",
+      },
+      {
         title: "NBC LA -Building Costco",
         url: "https://www.nbclosangeles.com/news/local/costco-with-apartments-south-la-baldwin-hills/3514264/",
       },

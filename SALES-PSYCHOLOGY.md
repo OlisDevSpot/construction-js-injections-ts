@@ -3,7 +3,7 @@
 - Social proofing (reviews)
 - Past projects
 - Reputation
-- Community service
+- Community service (donations, low income housing, church construction)
 - Awards
 - Scarcity
 - Longevity
