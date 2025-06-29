@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Construction JavaScript Injection
 // @description     Inject some javaScript into these websites
-// @version         1.0.14
+// @version         1.0.15
 // @author          Oliver P
 // @namespace       https://github.com/OlisDevSpot
 // @license         MIT
