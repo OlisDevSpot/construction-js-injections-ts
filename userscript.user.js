@@ -24,9 +24,6 @@ function createRegexFromPattern(pattern) {
 }
 
 const approvedMatchers = [
-  // GOOGLE SEARCH
-  "https://www.google.com/search?q=*",
-
   //   ARTICLES
   "https://abc7.com/how-do-i-get-help-with-my-utility-bill-much-power-costs-increase-during-heat-waves-many-people-are-struggling-to-pay-their-electric-bills/12272588/",
   "https://abc7.com/post/la-council-approves-54-million-proposal-modernize-expand/15024448",
@@ -37,7 +34,8 @@ const approvedMatchers = [
   "https://www.nbclosangeles.com/news/local/costco-with-apartments-south-la-baldwin-hills/3514264/",
   "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html*",
 
-  //   GLOBAL
+  //   UTILITY
+  "https://www.google.com/search?q=*",
   "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
   "https://www.sce.com/mysce/billsnpayments*",
   "https://www.sce.com/save-money/income-qualified-programs/*",

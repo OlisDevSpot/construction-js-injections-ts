@@ -49,6 +49,10 @@ export const bookmarksList = [
     label: "Official",
     bookmarks: [
       {
+        title: "CEC SB350",
+        url: "https://www.energy.ca.gov/rules-and-regulations/energy-suppliers-reporting/clean-energy-and-pollution-reduction-act-sb-350",
+      },
+      {
         title: "SCE Rate Change Alerts 01/24",
         url: "https://www.sce.com/save-money/rates-financing/sce-rate-advisory/20240101",
       },
