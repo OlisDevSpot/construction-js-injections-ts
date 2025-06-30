@@ -3,11 +3,11 @@ function templateFn() {
   const humanReviews = "{{reviews}}";
   const numReviews = 327;
 
-  const headerStats = document.querySelector(
-    "div[data-testid='BizHeaderReviewCount']"
-  );
-
   const headerObserver = new MutationObserver((mutations) => {
+    const headerStats = document.querySelector(
+      "div[data-testid='BizHeaderReviewCount']"
+    );
+    if (!headerStats) return;
     const topStarRating = document.querySelectorAll("div[role='img']")[0];
     const rating = headerStats.querySelector("span");
     const reviewCount = headerStats.querySelector("a");
