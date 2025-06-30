@@ -1,4 +1,29 @@
 function templateFn() {
+  const redColor = "rgba(251,67,60,1)";
+  const humanReviews = "{{reviews}}";
+  const numReviews = 327;
+
+  const headerStats = document.querySelector(
+    "div[data-testid='BizHeaderReviewCount']"
+  );
+
+  const headerObserver = new MutationObserver((mutations) => {
+    const topStarRating = document.querySelectorAll("div[role='img']")[0];
+    const rating = headerStats.querySelector("span");
+    const reviewCount = headerStats.querySelector("a");
+    if (topStarRating && rating && reviewCount) {
+      fiveStar(topStarRating);
+      rating.innerText = "4.9 ";
+      reviewCount.innerText = `(${numReviews} reviews)`;
+      headerObserver.disconnect();
+    }
+  });
+
+  headerObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
   const reviewSection = document.querySelector(
     "section[aria-label='Recommended Reviews']"
   );
@@ -17,14 +42,6 @@ function templateFn() {
     subtree: true,
   });
 
-  const redColor = "rgba(251,67,60,1)";
-  const humanReviews = "{{reviews}}";
-  const numReviews = 327;
-
-  setTimeout(() => {
-    updateHeader();
-  }, 800);
-
   function fiveStar(starContainer) {
     for (const star of starContainer.children) {
       const svg = star.querySelector("svg");
@@ -34,22 +51,6 @@ function templateFn() {
         path.style.opacity = "1";
       }
     }
-  }
-
-  function updateHeader() {
-    const ratingsAndCount = document.querySelector(
-      "div[data-testid='BizHeaderReviewCount']"
-    );
-    console.log(ratingsAndCount);
-    const mainScore = document.querySelectorAll("div[role='img']")[0];
-
-    fiveStar(mainScore);
-
-    const rating = ratingsAndCount.querySelector("span");
-    rating.innerText = "4.9 ";
-
-    const reviewCount = ratingsAndCount.querySelector("a");
-    reviewCount.innerText = `(${numReviews} reviews)`;
   }
 
   function updateBottomScore() {
