@@ -1,15 +1,28 @@
 function templateFn() {
+  const reviewSection = document.querySelector(
+    "section[aria-label='Recommended Reviews']"
+  );
+
+  const reviewsObserver = new MutationObserver((mutations) => {
+    const reviews = reviewSection.querySelector("ul");
+    if (reviews) {
+      updateBottomScore();
+      updateReviews();
+      reviewsObserver.disconnect();
+    }
+  });
+
+  reviewsObserver.observe(reviewSection, {
+    childList: true,
+    subtree: true,
+  });
+
   const redColor = "rgba(251,67,60,1)";
   const humanReviews = "{{reviews}}";
   const numReviews = 327;
 
   setTimeout(() => {
     updateHeader();
-
-    setTimeout(() => {
-      updateBottomScore();
-      updateReviews();
-    }, 3000);
   }, 800);
 
   function fiveStar(starContainer) {
