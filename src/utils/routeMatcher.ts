@@ -23,6 +23,8 @@ export function compileScripts(
   return compiled;
 }
 
+console.log("hi");
+
 // 2. Match against a URL
 export function findMatchingTemplate(
   url: string,
