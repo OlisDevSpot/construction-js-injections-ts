@@ -1,5 +1,5 @@
 import { CompanyMetadata } from "@/types/companies.js";
-import { generateCompany } from "@/utils/generateCompany.js";
+import { generateCompany } from "@/lib/generate-company.js";
 
 const triProsMetadata: CompanyMetadata = {
   key: "tri-pros",

@@ -1,4 +1,4 @@
-import { compileScripts } from "../utils/routeMatcher";
+import { compileScripts } from "@/lib/route-matcher";
 
 import { articleTemplates } from "./articles";
 import { companySpecificTemplates } from "./company-specific";

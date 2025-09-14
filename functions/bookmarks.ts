@@ -1,5 +1,5 @@
 import { AllCompanyAccessors } from "@/types/companies";
-import { generateBookmarks } from "@/utils/generateBookmarks";
+import { generateBookmarks } from "@/lib/generate-bookmarks";
 
 export async function onRequestOptions() {
   return new Response(null, {

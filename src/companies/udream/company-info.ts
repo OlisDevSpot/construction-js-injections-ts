@@ -1,5 +1,5 @@
 import { CompanyMetadata } from "@/types/companies";
-import { generateCompany } from "@/utils/generateCompany";
+import { generateCompany } from "@/lib/generate-company";
 
 const udreamMetadata: CompanyMetadata = {
   key: "udream",

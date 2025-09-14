@@ -2,8 +2,8 @@ import { scriptTemplates } from "@/templates";
 import {
   findMatchingTemplate,
   isCompanyMatching,
-} from "@/utils/routeMatcher";
-import { renderScript } from "@/utils/renderScript.js";
+} from "@/lib/route-matcher";
+import { renderScript } from "@/lib/render-script.js";
 import { AllCompanyAccessors } from "@/types/companies";
 
 export async function onRequestOptions() {
