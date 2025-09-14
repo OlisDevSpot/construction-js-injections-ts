@@ -1,12 +1,9 @@
 import { ScriptTemplate } from "@/types/templates";
 
-const injected = "OLIVER IS COOL!";
-
 export function templateFn() {
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
   const query = params.get("q")!.toLowerCase();
-  console.log(injected);
 
   const products = {
     artificial: {
