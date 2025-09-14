@@ -174,7 +174,7 @@ export function templateFn() {
     // const aiSegments = document.querySelectorAll('[data-lht]');
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
-    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *");
+    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *:not([style='display: none'])");
     const newDescription = getProductDescription(query);
 
     if (!newDescription || !aiSegments) return;
