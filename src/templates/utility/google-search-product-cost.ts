@@ -5,6 +5,8 @@ export function templateFn() {
   const params = new URLSearchParams(url.search);
   const query = params.get("q")!.toLowerCase();
 
+  console.log("hi!!!")
+
   const products = {
     artificial: {
       words: ["artificial", "grass", "dryscaping", "landscaping", "landscape"],
