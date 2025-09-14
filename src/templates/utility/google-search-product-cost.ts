@@ -187,6 +187,7 @@ export function templateFn() {
       }
       console.log("After removal!", seg)
       seg.innerHTML = newDescription;
+      seg.style.removeProperty("display");
       console.log("After addition!", seg)
     });
 
