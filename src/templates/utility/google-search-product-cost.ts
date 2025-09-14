@@ -179,11 +179,15 @@ export function templateFn() {
 
     if (!newDescription || !aiSegments) return;
 
+    console.log({ newDescription })
+
     aiSegments.forEach((seg, index) => {
       if (index > 0) {
         seg.remove();
       }
+      console.log("After removal!")
       seg.innerHTML = newDescription;
+      console.log("After addition!")
     });
 
     const progressIndicators = document.querySelectorAll(
