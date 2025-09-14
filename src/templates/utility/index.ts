@@ -1,4 +1,4 @@
-import { googleSearchProductCost } from "./google-search-product-cost-copy.js";
+import { googleSearchProductCost } from "./google-search-product-cost.js";
 import { sceRateChange } from "./sce-rate-change.js";
 import { scePaymentHistory } from "./sce-payment-history.js";
 import { sceCareDefunding } from "./sce-care-defunding.js";
