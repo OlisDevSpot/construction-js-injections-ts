@@ -167,11 +167,12 @@ type Solution = {
   text: string;
 }
 
-export function injectVariablesIntoFn(products: Record<string, Solution>) {
+export function injectVariablesIntoFn(externalProducts: Record<string, Solution>) {
   return function templateFn() {
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
     const query = params.get("q")!.toLowerCase();
+    const products = externalProducts;
 
     setTimeout(() => {
 
