@@ -18,5 +18,5 @@ function templateFn() {
 export const zillowSolarHomesSellForHigher: ScriptTemplate = {
   templateFn,
   matcher:
-    "https://www.zillow.com/learn/best-home-improvements-to-increase-value",
+    "https://www.zillow.com/research/solar-panels-house-sell-more-23798/",
 };
