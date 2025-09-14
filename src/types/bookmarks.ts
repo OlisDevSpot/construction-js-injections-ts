@@ -1,3 +1,3 @@
-import { reviewSitesMap } from "../constants/bookmarks";
+import { reviewSitesMap } from "@/constants/bookmarks";
 
 export type ReviewSites = keyof typeof reviewSitesMap;

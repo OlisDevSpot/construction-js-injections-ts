@@ -1,4 +1,4 @@
-import { ScriptTemplate } from "../../types/templates";
+import { ScriptTemplate } from "@/types/templates";
 
 function templateFn() {
   const redColor = "rgba(251,67,60,1)";

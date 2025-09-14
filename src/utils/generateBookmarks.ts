@@ -1,6 +1,6 @@
-import { bookmarksList, reviewSitesMap } from "../constants/bookmarks";
-import { ReviewSites } from "../types/bookmarks";
-import { AllCompanyAccessors } from "../types/companies";
+import { bookmarksList, reviewSitesMap } from "@/constants/bookmarks";
+import { ReviewSites } from "@/types/bookmarks";
+import { AllCompanyAccessors } from "@/types/companies";
 import { getCompany } from "./company";
 
 export function generateBookmarks(companyName: AllCompanyAccessors) {

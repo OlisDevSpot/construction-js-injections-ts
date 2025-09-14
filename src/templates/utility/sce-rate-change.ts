@@ -1,4 +1,4 @@
-import { ScriptTemplate } from "../../types/templates";
+import { ScriptTemplate } from "@/types/templates";
 
 type MonthString = "20240101" | "20240301" | "20240601" | "20241001";
 

@@ -1,5 +1,5 @@
-import { AllCompanyAccessors, Company } from "../types/companies.js";
-import { ScriptTemplate } from "../types/templates.js";
+import { AllCompanyAccessors, Company } from "@/types/companies.js";
+import { ScriptTemplate } from "@/types/templates.js";
 import { getCompany } from "./company.js";
 
 export type SpecificData = {

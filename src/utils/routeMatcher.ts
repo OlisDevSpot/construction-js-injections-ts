@@ -1,5 +1,5 @@
-import { AllCompanyAccessors } from "../types/companies.js";
-import { ScriptTemplate, ScriptTemplateAccessors } from "../types/templates.js";
+import { AllCompanyAccessors } from "@/types/companies.js";
+import { ScriptTemplate, ScriptTemplateAccessors } from "@/types/templates.js";
 import { getCompany } from "./company.js";
 
 function createRegexFromPattern(pattern: string) {

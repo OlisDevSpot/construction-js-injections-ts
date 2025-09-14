@@ -1,10 +1,10 @@
-import { scriptTemplates } from "../src/templates";
+import { scriptTemplates } from "@/templates";
 import {
   findMatchingTemplate,
   isCompanyMatching,
-} from "../src/utils/routeMatcher";
-import { renderScript } from "../src/utils/renderScript.js";
-import { AllCompanyAccessors } from "../src/types/companies";
+} from "@/utils/routeMatcher";
+import { renderScript } from "@/utils/renderScript.js";
+import { AllCompanyAccessors } from "@/types/companies";
 
 export async function onRequestOptions() {
   return new Response(null, {

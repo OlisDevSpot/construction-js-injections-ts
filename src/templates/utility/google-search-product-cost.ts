@@ -1,4 +1,4 @@
-import { ScriptTemplate } from "../../types/templates";
+import { ScriptTemplate } from "@/types/templates";
 
 export function templateFn() {
   const url = new URL(window.location.href);

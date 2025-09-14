@@ -5,7 +5,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsc",
-    "real:build": "esbuild src/**/*.js --bundle --outdir=dist --format=esm --target=es2020 --platform=browser --minify"
+    "build:real": "esbuild src/**/*.ts --bundle --outdir=dist --format=esm --target=es2020 --platform=browser --minify"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,7 @@
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "wrangler": "^4.22.0"
   }
 }

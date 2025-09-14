@@ -9,7 +9,7 @@ import {
 import { solarReviews_1 } from "./solar.js";
 import { CompanyType } from "../../types/companies.js";
 
-export const reviews: Record<CompanyType, string[][]> = {
+export const reviews: { [key in CompanyType]: string[][] } = {
   general: [generalConstructionReviews_1, generalConstructionReviews_2],
   ee: [energyEfficientReviews_1, energyEfficientReviews_2],
   solar: [solarReviews_1],
