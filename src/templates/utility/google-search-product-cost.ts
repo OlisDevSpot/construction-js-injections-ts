@@ -181,15 +181,14 @@ export function templateFn() {
 
     console.log({ newDescription })
 
-    aiSegments.forEach((seg, index) => {
-      if (index > 0) {
-        return seg.remove();
-      }
-      console.log("After removal!", seg)
-      seg.innerHTML = newDescription;
-      seg.removeAttribute("style");
-      console.log("After addition!", seg)
+    aiSegments.forEach((seg) => {
+      return seg.remove();
     });
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("WaaZC");
+    newDiv.innerHTML = newDescription as string;
+    aiParentGroup?.appendChild(newDiv);
 
     const progressIndicators = document.querySelectorAll(
       "div[role='progressbar']"
