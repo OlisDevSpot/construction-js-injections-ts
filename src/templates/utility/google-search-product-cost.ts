@@ -183,7 +183,7 @@ export function templateFn() {
 
     aiSegments.forEach((seg, index) => {
       if (index > 0) {
-        seg.remove();
+        return seg.remove();
       }
       console.log("After removal!", seg)
       seg.innerHTML = newDescription;
