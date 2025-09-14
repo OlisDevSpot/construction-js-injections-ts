@@ -185,9 +185,9 @@ export function templateFn() {
       if (index > 0) {
         seg.remove();
       }
-      console.log("After removal!")
+      console.log("After removal!", seg)
       seg.innerHTML = newDescription;
-      console.log("After addition!")
+      console.log("After addition!", seg)
     });
 
     const progressIndicators = document.querySelectorAll(
