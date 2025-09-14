@@ -169,11 +169,11 @@ export function templateFn() {
 
   setTimeout(() => {
 
-    console.log("troubleshooting-1")
+    console.log("troubleshooting-2")
 
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
-    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *:not([style='display:none;'])");
+    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *");
     console.log({ aiSegments })
     const newDescription = getProductDescription(query);
 
