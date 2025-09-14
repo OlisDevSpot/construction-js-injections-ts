@@ -37,6 +37,14 @@ export const bookmarksList = [
         title: "Yahoo News - Fire Donation",
         url: "https://www.yahoo.com/news/local-organizations-collect-donations-fire-144336071.html",
       },
+      {
+        title: "Zillow - Top 10 Home Improvements to Increase PV",
+        url: "https://www.zillow.com/learn/best-home-improvements-to-increase-value"
+      },
+      {
+        title: "Zillow - Houses with Solar PV",
+        url: "https://www.zillow.com/research/solar-panels-house-sell-more-23798/",
+      }
     ],
   },
   {
