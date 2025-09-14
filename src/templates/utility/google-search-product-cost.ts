@@ -4,9 +4,6 @@ export function templateFn() {
   const url = new URL(window.location.href);
   const params = new URLSearchParams(url.search);
   const query = params.get("q")!.toLowerCase();
-  console.log({ query });
-
-  console.log("hi!!!")
 
   const products = {
     artificial: {
@@ -171,10 +168,13 @@ export function templateFn() {
   };
 
   setTimeout(() => {
-    // const aiSegments = document.querySelectorAll('[data-lht]');
+
+    console.log("troubleshooting-1")
+
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
-    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *:not([style='display: none'])");
+    const aiSegments = aiParentGroup?.querySelectorAll(":scope > *:not([style='display:none;'])");
+    console.log({ aiSegments })
     const newDescription = getProductDescription(query);
 
     if (!newDescription || !aiSegments) return;
@@ -187,7 +187,7 @@ export function templateFn() {
       }
       console.log("After removal!", seg)
       seg.innerHTML = newDescription;
-      seg.style.removeProperty("display");
+      seg.removeAttribute("style");
       console.log("After addition!", seg)
     });
 
