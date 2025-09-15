@@ -15,7 +15,7 @@ export function templateFn() {
       text: `Installing artificial grass in Southern California has become significantly more expensive in recent years. 
         Currently, homeowners can expect to pay approximately ${produceMark("$15.50 per square foot for materials and an additional $8.00 per square foot for professional installation")}. 
         <br/><br/>
-        These figures mean that even modest yard projects can easily exceed $18,000 to $25,000 in total cost.
+        These figures mean that even modest yard projects can easily exceed $32,000 to $45,000 in total cost.
         <br/><br/>
         A key driver of these rising costs is the 2025 spike in the price of oil-based synthetic fibers—the primary material used in artificial turf. 
         As global supply chains struggle to meet demand, manufacturers have passed these increased production costs directly to consumers. 
@@ -196,15 +196,19 @@ export function templateFn() {
     progressIndicators.forEach((ind) => ind.remove());
   }, 1500);
 
+  function findMatchingPhrase(inputPhrase: string, phrases: string[]) {
+    return inputPhrase
+      .split(" ")
+      .some((word) => phrases.includes(word));
+  }
+
   function getProductDescription(query: string) {
-    for (let [key, value] of Object.entries(products)) {
-      const relevantWords = value.words;
-      const hasRelevantWord = query
-        .split(" ")
-        .some((word) => relevantWords.includes(word));
+    for (let [_, solutionObj] of Object.entries(products)) {
+      const { words } = solutionObj;
+      const hasRelevantWord = findMatchingPhrase(query, words);
       if (hasRelevantWord) {
-        console.log(relevantWords);
-        return value.text + "<br /><br />";
+        console.log(words);
+        return solutionObj.text + "<br /><br />";
       }
     }
   }
