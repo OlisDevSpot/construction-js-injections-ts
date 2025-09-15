@@ -5,11 +5,15 @@ export function templateFn() {
   const params = new URLSearchParams(url.search);
   const query = params.get("q")!.toLowerCase();
 
+  function produceMark(text: string) {
+    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 500;">${text}</mark>`;
+  }
+
   const products = {
     artificial: {
       words: ["artificial", "grass", "dryscaping", "landscaping", "landscape"],
       text: `Installing artificial grass in Southern California has become significantly more expensive in recent years. 
-        Currently, homeowners can expect to pay approximately <mark class="QVRyCf">$15.50 per square foot for materials and an additional $8.00 per square foot for professional installation</mark>. 
+        Currently, homeowners can expect to pay approximately ${produceMark("$15.50 per square foot for materials and an additional $8.00 per square foot for professional installation")}. 
         <br/><br/>
         These figures mean that even modest yard projects can easily exceed $18,000 to $25,000 in total cost.
         <br/><br/>
@@ -32,7 +36,7 @@ export function templateFn() {
       words: ["roof", "shingles", "roofing"],
       text: `Replacing a roof in Southern California has become one of the most expensive home maintenance projects homeowners face in 2025. 
         While some companies may advertise prices as low as $21,500, these are often unrealistic estimates that don’t reflect the true scope of most residential roofing projects. 
-        The majority of homeowners are seeing final costs range between <mark class="QVRyCf">$28,450 and $41,400</mark>, depending on home size, roof type, and complexity.
+        The majority of homeowners are seeing final costs range between ${produceMark("$28,450 and $41,400")}, depending on home size, roof type, and complexity.
         <br/><br/>
         Material costs have surged across the board. Prices for shingles, underlayment, flashing, and sealants have all increased sharply due to ongoing global supply chain disruptions. 
         Compounding the issue, the roofing industry continues to face a significant labor shortage—especially in high-demand regions like Southern California—driving contractor rates to all-time highs.
@@ -169,8 +173,6 @@ export function templateFn() {
 
   setTimeout(() => {
 
-    console.log("troubleshooting-2")
-
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
     const aiSegments = aiParentGroup?.querySelectorAll(":scope > *");
@@ -178,8 +180,6 @@ export function templateFn() {
     const newDescription = getProductDescription(query);
 
     if (!newDescription || !aiSegments) return;
-
-    console.log({ newDescription })
 
     aiSegments.forEach((seg) => {
       return seg.remove();
