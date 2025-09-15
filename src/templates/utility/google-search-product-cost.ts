@@ -6,7 +6,7 @@ export function templateFn() {
   const query = params.get("q")!.toLowerCase();
 
   function produceMark(text: string) {
-    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 500;">${text}</mark>`;
+    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 400;">${text}</mark>`;
   }
 
   const products = {
@@ -156,7 +156,7 @@ export function templateFn() {
     airDucts: {
       words: ["duct", "r6", "ducts"],
       text: `Replacing or installing R6 flex-ducts in Southern California homes has become a costly yet critical upgrade when upgrading your central air system.   
-        For most homeowners, total project costs are now ranging between <mark class="QVRyCf">$11,500 and $15,000</mark>, depending on home layout, attic accessibility, and ducting complexity. 
+        For most homeowners, total project costs are now ranging between ${produceMark("$11,500 and $15,000")}, depending on home layout, attic accessibility, and ducting complexity. 
         <br/><br/>
         R6 flex-ducts are designed to meet modern energy codes and reduce HVAC energy loss—but they’re far from cheap in 2025.  
         The cost of insulation materials, flexible liners, and vapor barriers has risen sharply due to ongoing supply chain disruptions and inflation across the construction sector.  
