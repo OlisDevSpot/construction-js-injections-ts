@@ -6,7 +6,7 @@ export function templateFn() {
   const query = params.get("q")!.toLowerCase();
 
   function produceMark(text: string) {
-    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 400;">${text}</mark>`;
+    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 400;">${text}")}`;
   }
 
   const products = {
@@ -42,10 +42,10 @@ export function templateFn() {
         Compounding the issue, the roofing industry continues to face a significant labor shortage—especially in high-demand regions like Southern California—driving contractor rates to all-time highs.
         <br/><br/>
         Beyond materials and labor, there are numerous hidden costs that quickly add up. 
-        Permit fees, mandatory city inspections, and potential structural repairs (such as replacing rotten decking or upgrading framing to meet code) can push the total bill near <mark class="QVRyCf">$50,000</mark> for many homes.
+        Permit fees, mandatory city inspections, and potential structural repairs (such as replacing rotten decking or upgrading framing to meet code) can push the total bill near ${produceMark("$50,000")} for many homes.
         <br/><br/>
         Even opting for the most basic asphalt shingle doesn’t provide much relief in 2025. 
-        More durable and energy-efficient options like composite, tile, or metal roofs can raise the total cost to <mark class="QVRyCf">$65,000 or more</mark> for a typical Southern California home.
+        More durable and energy-efficient options like composite, tile, or metal roofs can raise the total cost to ${produceMark("$65,000 or more")} for a typical Southern California home.
         <br/><br/>
         With rising climate demands, stricter building codes, and extreme weather events becoming more common, homeowners are finding that roof replacement is no longer just a maintenance task—it's a major financial undertaking. 
         Understanding what drives these costs is essential for planning ahead and protecting your investment.`,
@@ -72,15 +72,15 @@ export function templateFn() {
       words: ["windows", "window", "double", "pane"],
       text: `Upgrading to double pane windows in Southern California has become a costly—but increasingly necessary—home improvement in 2025.  
         While advertisements may promote packages starting at $18,000, these typically exclude key customizations and installation factors found in most homes.  
-        For a complete retrofit, homeowners are seeing final costs between <mark class="QVRyCf">$28,200 and $41,700</mark>, depending on window sizes, frame materials, and the age of the structure.  
+        For a complete retrofit, homeowners are seeing final costs between ${produceMark("$28,200 and $41,700")}, depending on window sizes, frame materials, and the age of the structure.  
         <br/><br/>
         Material prices have spiked considerably. Glass, vinyl, aluminum, and insulating gases like argon are all subject to ongoing 2025 inflation, driven by global supply chain constraints and heightened demand for energy-efficient products.  
         Labor is also a major contributor—experienced window installers are in short supply, and contractors have raised rates to keep pace with demand across the state.  
         <br/><br/>
         Beyond basic installation, hidden expenses can drive up total project costs quickly.  
-        Permits, structural framing adjustments, and the need to bring older homes up to code (such as tempered safety glass requirements) can increase the final bill to nearly <mark class="QVRyCf">$40,000</mark>.  
+        Permits, structural framing adjustments, and the need to bring older homes up to code (such as tempered safety glass requirements) can increase the final bill to nearly ${produceMark("$40,000")}.  
         <br/><br/>
-        Choosing premium features like low-E coatings, custom frame colors, or triple glazing can push costs to <mark class="QVRyCf">$50,000 or more</mark> for a typical Southern California residence.  
+        Choosing premium features like low-E coatings, custom frame colors, or triple glazing can push costs to ${produceMark("$50,000 or more")} for a typical Southern California residence.  
         <br/><br/>
         As energy codes tighten and extreme weather places more stress on home insulation systems, double pane window retrofits have moved beyond cosmetic upgrades—they’re now critical investments in comfort, compliance, and long-term energy savings.
         `,
@@ -89,15 +89,15 @@ export function templateFn() {
       words: ["cool paint", "reflective", "exterior", "heat resistant"],
       text: `Applying reflective or “cool” paint to a home’s exterior has become a high-ticket energy upgrade in Southern California in 2025.  
         Homeowners report installation quotes starting at $16,500, but also explain that these figures rarely reflect the true cost for full-home applications using quality materials.  
-        Most homeowners are seeing actual project totals fall between <mark class="QVRyCf">$21,500 and $31,000</mark>, depending on home size, wall condition, and paint system used.  
+        Most homeowners are seeing actual project totals fall between ${produceMark("$21,500 and $31,000")}, depending on home size, wall condition, and paint system used.  
         <br/><br/>
         This isn’t standard paint—cool coatings use infrared-reflective pigments and advanced binders that significantly reduce heat absorption, but they come at a premium.  
         The 2025 global material price surge has sharply increased the cost of these specialty compounds, pushing product costs well above traditional paints.  
         <br/><br/>
         Beyond materials, labor and preparation can quickly drive up the final invoice.  
-        Power washing, priming, stucco repairs, and careful masking—especially on multi-story homes or those with damaged exteriors—can raise the total bill to nearly <mark class="QVRyCf">$30,000</mark>.  
+        Power washing, priming, stucco repairs, and careful masking—especially on multi-story homes or those with damaged exteriors—can raise the total bill to nearly ${produceMark("$30,000")}.  
         <br/><br/>
-        For those choosing high-performance coatings with longer warranties or eco-certified formulations, project costs can reach <mark class="QVRyCf">$35,000 or more</mark> for a typical Southern California property.  
+        For those choosing high-performance coatings with longer warranties or eco-certified formulations, project costs can reach ${produceMark("$35,000 or more")} for a typical Southern California property.  
         <br/><br/>
         With rising temperatures, stricter energy regulations, and growing demand for passive cooling solutions, cool paint is no longer a niche product—it’s a serious investment in comfort, efficiency, and long-term property value.
         `,
@@ -105,16 +105,16 @@ export function templateFn() {
     hvac: {
       words: ["hvac"],
       text: `As of 2025, undertaking a full HVAC replacement in Southern California is a complex and expensive home upgrades.   
-        For most homeowners, all-in costs now range between <mark class="QVRyCf">$23,200 and $35,000</mark>, depending on home size, system type, and scope of work. While some online quotes start at $18,000, these typically exclude essential elements like duct replacement, code compliance, or high-efficiency system requirements. 
+        For most homeowners, all-in costs now range between ${produceMark("$23,200 and $35,000")}, depending on home size, system type, and scope of work. While some online quotes start at $18,000, these typically exclude essential elements like duct replacement, code compliance, or high-efficiency system requirements. 
         <br/><br/>
         A complete replacement often includes removal of the old furnace and A/C units, installation of a high-efficiency 14 SEER air conditioner, a compatible furnace or air handler, thermostat upgrades, and refrigerant line replacement.  
         Each of these components has seen sharp price increases due to inflation in copper, aluminum, and refrigerant costs—especially as eco-friendlier R-410A and R-454B refrigerants become the new standard.  
         <br/><br/>
         Labor is another major cost driver.  
         Properly sizing and balancing a new system often requires replacing outdated or undersized ducts, sealing leaks, and upgrading electrical panels—especially in older homes.  
-        This work alone can push the project total close to <mark class="QVRyCf">$40,000</mark>, particularly in multi-story homes or those with limited attic access.  
+        This work alone can push the project total close to ${produceMark("$40,000")}, particularly in multi-story homes or those with limited attic access.  
         <br/><br/>
-        Opting for extras like zoning systems, smart thermostats, MERV 13+ air filtration, or solar-ready components can push final costs to <mark class="QVRyCf">$45,000 or more</mark> in many Southern California homes.  
+        Opting for extras like zoning systems, smart thermostats, MERV 13+ air filtration, or solar-ready components can push final costs to ${produceMark("$45,000 or more")} in many Southern California homes.  
         <br/><br/>
         With stricter energy codes, rising heat waves, and utility bills climbing fast, a full HVAC replacement in 2025 is no longer just about staying cool—it’s about investing in efficiency, home health, and long-term performance under increasingly demanding conditions.
         `,
@@ -123,15 +123,15 @@ export function templateFn() {
       words: ["ac", "a/c", "air", "conditioning"],
       text: `Installing a high-efficiency 14 SEER air conditioning system in Southern California has become a significant undertaking for homeowners in 2025.  
         Although budget systems may be advertised at prices starting around $10,000, these rarely account for the true requirements of most Southern California homes.  
-        Homeowners are now commonly paying between <mark class="QVRyCf">$15,000 and $25,000</mark>, depending on home size, duct layout, and cooling demands.  
+        Homeowners are now commonly paying between ${produceMark("$15,000 and $25,000")}, depending on home size, duct layout, and cooling demands.  
         <br/><br/>
         Rising global material prices have made compressors, refrigerants, and air handlers considerably more expensive this year.  
         Additionally, new federal and state efficiency regulations mean 14 SEER is now the minimum standard in many areas—so older, cheaper models are no longer an option, pushing up base system costs.  
         <br/><br/>
         Installation complexity is another cost driver.  
-        Many homes require upgraded electrical panels, improved ductwork for airflow compliance, and proper refrigerant line replacement—contributing to total project costs that can approach <mark class="QVRyCf">$28,000</mark>.  
+        Many homes require upgraded electrical panels, improved ductwork for airflow compliance, and proper refrigerant line replacement—contributing to total project costs that can approach ${produceMark("$28,000")}.  
         <br/><br/>
-        For homes opting into smart climate control systems, variable-speed compressors, or solar-compatible A/C units, final costs can easily reach <mark class="QVRyCf">$32,000 or more</mark> across Southern California.  
+        For homes opting into smart climate control systems, variable-speed compressors, or solar-compatible A/C units, final costs can easily reach ${produceMark("$32,000 or more")} across Southern California.  
         <br/><br/>
         With scorching summers, stricter environmental guidelines, and high electricity rates, replacing an A/C system in 2025 is no longer just a comfort decision—it’s an essential step toward energy efficiency, resilience, and future-proofing your home.
         `,
@@ -140,15 +140,15 @@ export function templateFn() {
       words: ["furnace", "heater"],
       text: `Modernizing a home heating system in Southern California has evolved into one of the more substantial upgrades facing homeowners in 2025.  
         Although entry-level systems are still being marketed for as little as $8,500, these quotes often exclude key elements like high-efficiency equipment, proper ventilation, or updated controls.  
-        Comprehensive replacements now average between <mark class="QVRyCf">$13,000 and $22,000</mark>, influenced heavily by home size, efficiency goals, and installation logistics.  
+        Comprehensive replacements now average between ${produceMark("$13,000 and $22,000")}, influenced heavily by home size, efficiency goals, and installation logistics.  
         <br/><br/>
         System components—especially energy-efficient furnaces, programmable thermostats, and advanced filtration units—have surged in cost due to persistent inflation in HVAC materials and electronics.  
         In 2025, even basic systems must meet stricter efficiency benchmarks, further driving up the price of parts and certifications.  
         <br/><br/>
         Installation isn’t as straightforward as it once was.  
-        Bringing older homes up to current code often involves electrical upgrades, duct sealing, and airflow testing—all of which add significant labor hours and can drive total installation costs close to <mark class="QVRyCf">$26,000</mark>.  
+        Bringing older homes up to current code often involves electrical upgrades, duct sealing, and airflow testing—all of which add significant labor hours and can drive total installation costs close to ${produceMark("$26,000")}.  
         <br/><br/>
-        Choosing smart zoning, ultra-low emission models, or integrating with solar-ready infrastructure can push total system investments to <mark class="QVRyCf">$30,000 or more</mark> in Southern California.  
+        Choosing smart zoning, ultra-low emission models, or integrating with solar-ready infrastructure can push total system investments to ${produceMark("$30,000 or more")} in Southern California.  
         <br/><br/>
         As heating systems become smarter, cleaner, and more tightly regulated, what was once a routine equipment swap is now a full-scope energy project—essential not only for comfort, but for code compliance, resale value, and long-term savings.
         `,
@@ -162,9 +162,9 @@ export function templateFn() {
         The cost of insulation materials, flexible liners, and vapor barriers has risen sharply due to ongoing supply chain disruptions and inflation across the construction sector.  
         <br/><br/>
         Labor expenses are another significant driver.  
-        Proper duct routing, sealing, and balancing require skilled technicians—especially in older homes with tight crawlspaces or limited attic clearance—pushing final bills close to <mark class="QVRyCf">$25,000</mark> for more complex jobs.  
+        Proper duct routing, sealing, and balancing require skilled technicians—especially in older homes with tight crawlspaces or limited attic clearance—pushing final bills close to ${produceMark("$25,000")} for more complex jobs.  
         <br/><br/>
-        Opting for enhanced airflow designs, antimicrobial liners, or pairing the duct upgrade with system zoning can increase total project costs to <mark class="QVRyCf">$30,000 or more</mark> for larger homes.  
+        Opting for enhanced airflow designs, antimicrobial liners, or pairing the duct upgrade with system zoning can increase total project costs to ${produceMark("$30,000 or more")} for larger homes.  
         <br/><br/>
         With California’s strict Title 24 energy codes and rising demand for efficient HVAC performance, upgrading to R6 flex-ducts is no longer just routine maintenance—it’s a major investment in indoor air quality, comfort, and compliance.
         `,
