@@ -32,6 +32,28 @@ export function templateFn() {
         In this landscape, understanding the full scope of costs—and the factors behind them—is critical for homeowners looking to make informed, budget-conscious decisions.
         `,
     },
+    fence: {
+      words: ["fence", "fences", "fencing"],
+      text: `The cost of installing vinyl privacy and frontyard picket fencing in California has risen sharply over the past few years. 
+        At present, homeowners report they typically spend around ${produceMark("$285 to $345 per linear foot")}, depending on the style of fence and level of professional installation required. 
+        <br/><br/>
+        For many families, this translates into overall project budgets that can quickly reach tens of thousands of dollars, even for average-sized yards. 
+        <br/><br/>
+        A major factor behind these increases is the surge in material costs. 
+        Vinyl production relies heavily on petroleum-based inputs, and global supply chain disruptions have made these raw materials more expensive to source. 
+        At the same time, wood picket options face similar pressures, as lumber prices have remained volatile. 
+        <br/><br/>
+        Labor shortages across California add another layer of expense, with most contractors reporting a starting daily pay of ${produceMark("$75 to $100 per hour per worker")}, depending on the complexity of the project. 
+        Skilled fence installers are in high demand, and this scarcity has pushed hourly installation rates higher than in previous years. 
+        <br/><br/>
+        Beyond simply setting posts and panels, a professional installation often requires site preparation—removing old fencing, grading the ground, hauling away waste, and ensuring compliance with local building codes. 
+        These necessary steps add both time and cost to the project. 
+        <br/><br/>
+        For homeowners, the decision has become more complex. 
+        Fencing provides privacy, security, and curb appeal, but what was once a moderately priced home improvement can now carry the weight of a major renovation expense. 
+        Understanding the full breakdown of costs—and why they’ve escalated—is essential for anyone planning a fencing upgrade in today’s market.
+        `,
+    },
     roof: {
       words: ["roof", "shingles", "roofing"],
       text: `Replacing a roof in Southern California has become one of the most expensive home maintenance projects homeowners face in 2025. 
