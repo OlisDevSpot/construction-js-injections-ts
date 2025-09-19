@@ -6,7 +6,7 @@ export function templateFn() {
   const query = params.get("q")!.toLowerCase();
 
   function produceMark(text: string) {
-    return `<mark class="QVRyCf" style="color: white; background-color: #374488; font-weight: 400;">${text}</mark>`;
+    return `<mark class="QVRyCf" style="color-scheme: light dark; color: CanvasText; background-color: #374488; font-weight: 400;">${text}</mark>`;
   }
 
   const products = {
