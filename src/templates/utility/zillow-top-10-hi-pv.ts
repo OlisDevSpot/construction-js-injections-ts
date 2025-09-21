@@ -1,6 +1,8 @@
 import { ScriptTemplate } from "@/types/templates";
 
 function templateFn() {
+  let currentUpgradeGroup = "ee";
+
   const upgrades = [
     {
       name: "Solar Panels",
@@ -74,14 +76,46 @@ function templateFn() {
     const owningButton = owningSpan?.closest("a");
 
     owningSpan!.textContent = "Energy Efficiency";
-    owningButton!.href = "";
+    owningButton!.href = "#";
+    owningButton!.onclick = () => {
+      currentUpgradeGroup = "ee";
+      updateHeadings();
+    };
 
     const hiSpan = Array.from(document.querySelectorAll("a span span")).find(
       (span) => span.textContent.trim().toLowerCase() === "home improvement"
     );
     const hiButton = hiSpan?.closest("a");
+    hiButton!.onclick = () => {
+      currentUpgradeGroup = "hi";
+      updateHeadings();
+    };
 
     hiButton!.href = "";
+  }
+
+  function updateHeadings() {
+    headings.forEach((heading, index) => {
+      const currentUpgrade =
+        currentUpgradeGroup === "hi" ? hiUpgrades[index] : upgrades[index];
+      const list = heading.nextElementSibling as Element;
+
+      if (!headings[index] || !currentUpgrade) return;
+
+      headings[index].innerHTML =
+        `${index + 1}. <strong>${currentUpgrade.name}</strong>`;
+
+      const lines = list.querySelectorAll("li");
+
+      const resaleAmt = currentUpgrade.cost * currentUpgrade.recoup;
+
+      if (!lines[0] || !lines[1] || !lines[2]) return;
+
+      lines[0].innerText = "Cost: " + formatAsCurrency(currentUpgrade.cost);
+      lines[1].innerText = "Resale: " + formatAsCurrency(resaleAmt);
+      lines[2].innerText =
+        "Recoup: " + `${Math.round(currentUpgrade.recoup * 100)}%`;
+    });
   }
 
   function formatAsCurrency(number: number) {
@@ -96,26 +130,7 @@ function templateFn() {
 
   const headings = Array.from(document.querySelectorAll("h3")).slice(0, 10);
 
-  headings.forEach((heading, index) => {
-    const currentUpgrade = upgrades[index];
-    const list = heading.nextElementSibling as Element;
-
-    if (!headings[index] || !currentUpgrade) return;
-
-    headings[index].innerHTML =
-      `${index + 1}. <strong>${currentUpgrade.name}</strong>`;
-
-    const lines = list.querySelectorAll("li");
-
-    const resaleAmt = currentUpgrade.cost * currentUpgrade.recoup;
-
-    if (!lines[0] || !lines[1] || !lines[2]) return;
-
-    lines[0].innerText = "Cost: " + formatAsCurrency(currentUpgrade.cost);
-    lines[1].innerText = "Resale: " + formatAsCurrency(resaleAmt);
-    lines[2].innerText =
-      "Recoup: " + `${Math.round(currentUpgrade.recoup * 100)}%`;
-  });
+  updateHeadings();
 }
 
 export const zillowTop10HiPv: ScriptTemplate = {
