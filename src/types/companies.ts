@@ -4,7 +4,8 @@ export type AllCompanyAccessors =
   | "palmetto"
   | "sw"
   | "tri-pros"
-  | "udream";
+  | "udream"
+  | "green-leaf";
 
 export type CompanyMetadata = {
   key: AllCompanyAccessors;
