@@ -74,14 +74,14 @@ function templateFn() {
     const owningButton = owningSpan?.closest("a");
 
     owningSpan!.textContent = "Energy Efficiency";
-    owningButton!.href = "#";
+    owningButton!.href = "";
 
     const hiSpan = Array.from(document.querySelectorAll("a span span")).find(
       (span) => span.textContent.trim().toLowerCase() === "home improvement"
     );
     const hiButton = hiSpan?.closest("a");
 
-    hiButton!.href = "#";
+    hiButton!.href = "";
   }
 
   function formatAsCurrency(number: number) {
