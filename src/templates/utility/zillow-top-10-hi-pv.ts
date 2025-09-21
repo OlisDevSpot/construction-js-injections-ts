@@ -67,22 +67,22 @@ function templateFn() {
     { name: "Recess lighting", cost: 33450, recoup: 1.09 },
   ];
 
-  // function overrideButtons() {
-  //   const owningSpan = Array.from(
-  //     document.querySelectorAll("a span span")
-  //   ).find((span) => span.textContent.trim().toLowerCase() === "owning");
-  //   const owningButton = owningSpan?.closest("a");
+  function overrideButtons() {
+    const owningSpan = Array.from(
+      document.querySelectorAll("a span span")
+    ).find((span) => span.textContent.trim().toLowerCase() === "owning");
+    const owningButton = owningSpan?.closest("a");
 
-  //   owningSpan!.textContent = "Energy Efficiency";
-  //   owningButton!.href = "#";
+    owningSpan!.textContent = "Energy Efficiency";
+    owningButton!.href = "#";
 
-  //   const hiSpan = Array.from(document.querySelectorAll("a span span")).find(
-  //     (span) => span.textContent.trim().toLowerCase() === "home improvement"
-  //   );
-  //   const hiButton = hiSpan?.closest("a");
+    const hiSpan = Array.from(document.querySelectorAll("a span span")).find(
+      (span) => span.textContent.trim().toLowerCase() === "home improvement"
+    );
+    const hiButton = hiSpan?.closest("a");
 
-  //   hiButton!.href = "#";
-  // }
+    hiButton!.href = "#";
+  }
 
   function formatAsCurrency(number: number) {
     return new Intl.NumberFormat("en-US", {
@@ -92,7 +92,7 @@ function templateFn() {
     }).format(number);
   }
 
-  // setTimeout(overrideButtons, 1000);
+  overrideButtons();
 
   const headings = Array.from(document.querySelectorAll("h3")).slice(0, 10);
 
@@ -121,5 +121,5 @@ function templateFn() {
 export const zillowTop10HiPv: ScriptTemplate = {
   templateFn,
   matcher:
-    "https://www.zillow.com/learn/best-home-improvements-to-increase-value",
+    "https://www.zillow.com/learn/best-home-improvements-to-increase-value*",
 };
