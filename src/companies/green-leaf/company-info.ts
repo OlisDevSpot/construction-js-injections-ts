@@ -9,7 +9,7 @@ const greenLeafMetadata: CompanyMetadata = {
   licenseNum: "1112141",
   reviewLinks: [
     "https://www.yelp.com/biz/green-leaf-remodeling-encino",
-    "https://www.bbb.org/us/ca/van-nuys/profile/solar-installation/david-star-construction-inc-1216-1000029203/customer-reviews",
+    "https://www.bbb.org/us/ca/encino/profile/general-contractor/green-leaf-remodeling-1216-1000040775/customer-reviews",
   ],
 };
 
