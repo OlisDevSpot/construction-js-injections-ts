@@ -75,9 +75,6 @@ function templateFn() {
 
     owningSpan!.textContent = "Energy Efficiency";
     owningButton!.href = "#";
-    owningButton!.onclick = () => {
-      console.log("click");
-    };
 
     const hiSpan = Array.from(document.querySelectorAll("a span span")).find(
       (span) => span.textContent.trim().toLowerCase() === "home improvement"
@@ -97,7 +94,7 @@ function templateFn() {
     }).format(number);
   }
 
-  overrideButtons();
+  setTimeout(overrideButtons, 1000);
 
   const headings = Array.from(document.querySelectorAll("h3")).slice(0, 10);
 
