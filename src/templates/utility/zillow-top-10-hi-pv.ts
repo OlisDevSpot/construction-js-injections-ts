@@ -77,7 +77,8 @@ function templateFn() {
 
     owningSpan!.textContent = "Energy Efficiency";
     owningButton!.href = "#";
-    owningButton!.onclick = () => {
+    owningButton!.onclick = (e) => {
+      e.preventDefault();
       currentUpgradeGroup = "ee";
       updateHeadings();
     };
@@ -86,7 +87,8 @@ function templateFn() {
       (span) => span.textContent.trim().toLowerCase() === "home improvement"
     );
     const hiButton = hiSpan?.closest("a");
-    hiButton!.onclick = () => {
+    hiButton!.onclick = (e) => {
+      e.preventDefault();
       currentUpgradeGroup = "hi";
       updateHeadings();
     };
