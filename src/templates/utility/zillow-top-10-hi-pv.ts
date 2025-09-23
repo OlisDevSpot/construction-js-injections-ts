@@ -1,59 +1,22 @@
 import { ScriptTemplate } from "@/types/templates";
 
+type CurrentUpgradeGroup = "ee" | "hi";
+
 function templateFn() {
-  let currentUpgradeGroup = "ee";
+  let currentUpgradeGroup: CurrentUpgradeGroup = "ee";
+  const headings = Array.from(document.querySelectorAll("h3")).slice(0, 10);
 
   const upgrades = [
-    {
-      name: "Solar Panels",
-      cost: 43448,
-      recoup: 1.35,
-    },
-    {
-      name: "Roofing replacement",
-      cost: 31130,
-      recoup: 1.28,
-    },
-    {
-      name: "HVAC upgrade",
-      cost: 29760,
-      recoup: 1.23,
-    },
-    {
-      name: "Double pane windows",
-      cost: 32550,
-      recoup: 1.22,
-    },
-    {
-      name: "Dry landscaping",
-      cost: 25871,
-      recoup: 1.22,
-    },
-    {
-      name: "Main panel upgrade",
-      cost: 7800,
-      recoup: 1.2,
-    },
-    {
-      name: "Additional Dwelling Unit",
-      cost: 296445,
-      recoup: 1.15,
-    },
-    {
-      name: "Attic insulation",
-      cost: 14540,
-      recoup: 1.15,
-    },
-    {
-      name: "Kitchen upgrade",
-      cost: 62000,
-      recoup: 1.13,
-    },
-    {
-      name: "Bathroom upgrade",
-      cost: 39500,
-      recoup: 1.11,
-    },
+    { name: "Solar Panels", cost: 43448, recoup: 1.35, },
+    { name: "Roofing replacement", cost: 31130, recoup: 1.28, },
+    { name: "HVAC upgrade", cost: 29760, recoup: 1.23, },
+    { name: "Double pane windows", cost: 32550, recoup: 1.22, },
+    { name: "Dry landscaping", cost: 25871, recoup: 1.22, },
+    { name: "Main panel upgrade", cost: 7800, recoup: 1.2, },
+    { name: "Additional Dwelling Unit", cost: 296445, recoup: 1.15, },
+    { name: "Attic insulation", cost: 14540, recoup: 1.15, },
+    { name: "Kitchen upgrade", cost: 62000, recoup: 1.13, },
+    { name: "Bathroom upgrade", cost: 39500, recoup: 1.11, },
   ];
 
   const hiUpgrades = [
@@ -97,17 +60,18 @@ function templateFn() {
   }
 
   function updateHeadings() {
+    const currentUpgrades = currentUpgradeGroup === "hi" ? hiUpgrades : upgrades;
+
     headings.forEach((heading, index) => {
-      const currentUpgrade =
-        currentUpgradeGroup === "hi" ? hiUpgrades[index] : upgrades[index];
-      const list = heading.nextElementSibling as Element;
+      const currentUpgrade = currentUpgrades[index];
+      const upgradeInfoUl = heading.nextElementSibling as Element;
 
       if (!headings[index] || !currentUpgrade) return;
 
       headings[index].innerHTML =
         `${index + 1}. <strong>${currentUpgrade.name}</strong>`;
 
-      const lines = list.querySelectorAll("li");
+      const lines = upgradeInfoUl.querySelectorAll("li");
 
       const resaleAmt = currentUpgrade.cost * currentUpgrade.recoup;
 
@@ -129,9 +93,6 @@ function templateFn() {
   }
 
   overrideButtons();
-
-  const headings = Array.from(document.querySelectorAll("h3")).slice(0, 10);
-
   updateHeadings();
 }
 
