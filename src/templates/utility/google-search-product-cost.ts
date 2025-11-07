@@ -194,7 +194,6 @@ export function templateFn() {
   };
 
   setTimeout(() => {
-
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
     const aiSegments = aiParentGroup?.querySelectorAll(":scope > *");

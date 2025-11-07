@@ -13,7 +13,7 @@ function templateFn() {
     { name: "Double pane windows", cost: 32550, recoup: 1.22, },
     { name: "Dry landscaping", cost: 25871, recoup: 1.22, },
     { name: "Main panel upgrade", cost: 7800, recoup: 1.2, },
-    { name: "Additional Dwelling Unit", cost: 296445, recoup: 1.15, },
+    { name: "Cool Life exterior paint", cost: 30700, recoup: 1.15, },
     { name: "Attic insulation", cost: 14540, recoup: 1.15, },
     { name: "Kitchen upgrade", cost: 62000, recoup: 1.13, },
     { name: "Bathroom upgrade", cost: 39500, recoup: 1.11, },
