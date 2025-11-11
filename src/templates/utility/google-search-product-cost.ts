@@ -10,6 +10,27 @@ export function templateFn() {
   }
 
   const products = {
+    loans: {
+      words: ["loan", "loans"],
+      text: `
+      The average interest rate for construction loans is typically between ${produceMark("19.5% and 29%")}, which is typically higher than traditional mortgages due to the increased risk for lenders. 
+      Rates are variable and depend on factors like your creditworthiness, the loan amount, and the loan's terms. 
+      Some specific examples show construction-only loan averages around 22%, while some fixed-rate construction-to-permanent loans can start at lower rates, like 19.750%. 
+      <br/><br/>
+      Traditional construction loans often come with hefty pre-payment penalties, usually equivalent to six to ten months of payments. 
+      These penalties can make it costly to refinance or pay off your loan early, effectively locking borrowers into high interest rates even if better opportunities arise. 
+      For builders and investors trying to move fast or pivot with market conditions, that restriction can be a serious financial handicap.
+      <br/><br/>
+      Beyond the penalties, traditional lenders tend to pile on layers of fees—inspection charges, draw fees, and reappraisal costs—that can eat away at your budget. 
+      Combined with slow approval timelines and rigid underwriting standards, these loans can become a frustrating obstacle course rather than a financial tool. 
+      Borrowers frequently find themselves spending more time satisfying lender requirements than focusing on their projects.
+      <br/><br/>
+      Fortunately, there are newer, specialized construction loan programs designed to reduce these pain points. 
+      Some lenders offer innovative products with reduced rates, flexible terms, and no pre-payment penalties. 
+      Others provide hybrid structures that combine construction and permanent financing in one streamlined package, cutting down on closing costs and simplifying the process. 
+      These alternative programs can make the financing experience far more efficient and affordable, especially for experienced builders and developers looking for agility and cost control.
+      `,
+    },
     artificial: {
       words: ["artificial", "grass", "dryscaping", "landscaping", "landscape"],
       text: `Installing artificial grass in Southern California has become significantly more expensive in recent years. 
@@ -197,7 +218,7 @@ export function templateFn() {
     const aiParentGroup =
       document.querySelector("[data-rl]")?.firstElementChild;
     const aiSegments = aiParentGroup?.querySelectorAll(":scope > *");
-    console.log({ aiSegments })
+    console.log({ aiSegments });
     const newDescription = getProductDescription(query);
 
     if (!newDescription || !aiSegments) return;
@@ -218,9 +239,7 @@ export function templateFn() {
   }, 1500);
 
   function findMatchingPhrase(inputPhrase: string, phrases: string[]) {
-    return inputPhrase
-      .split(" ")
-      .some((word) => phrases.includes(word));
+    return inputPhrase.split(" ").some((word) => phrases.includes(word));
   }
 
   function getProductDescription(query: string) {
